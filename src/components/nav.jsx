@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import style from "@/styles/nav.module.css";
 import Search from "@/components/search";
@@ -30,3 +31,10 @@ const Nav = () => {
 };
 
 export default Nav;
+=======
+const nav = () => {
+  return <div>nav</div>;
+};
+
+export default nav;
+>>>>>>> 2e9fef4b3a74959f3f67457ce78a7e420926fa09
