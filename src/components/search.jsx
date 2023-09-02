@@ -2,8 +2,6 @@ import React from "react";
 import style from "@/styles/nav.module.css";
 import { BiSearchAlt } from "react-icons/bi";
 
-// import { SearchIcon, Search } from "@mui/icons-material/Search";
-
 const search = () => {
   const handleSearch = () => {};
   return (
@@ -11,20 +9,11 @@ const search = () => {
       <form action="">
         <div className={style.search}>
           <div className={style.searchimg}>
-            <BiSearchAlt size={25} />
+            <BiSearchAlt size={20} />
           </div>
-          <input type="text" placeholder="Search Product" />
+          <input type="search" placeholder="Search Product" />
         </div>
       </form>
-      {/* <Search>
-        <SearchIconWrapper>
-          <SearchIcon />
-        </SearchIconWrapper>
-        <StyledInputBase
-          placeholder="Search…"
-          inputProps={{ "aria-label": "search" }}
-        />
-      </Search> */}
     </section>
   );
 };
