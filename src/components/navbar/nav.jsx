@@ -1,6 +1,6 @@
-import React from "react";
 import style from "@/styles/nav.module.css";
-import Search from "@/components/search";
+import Search from "@/components/navbar/search";
+import Navmenu from "./navmenu";
 import { BiShoppingBag } from "react-icons/bi";
 
 const Nav = () => {
@@ -11,14 +11,7 @@ const Nav = () => {
           <img src="/next.svg" alt="Gangester Clothing" />
         </div>
         <div className={style.menu}>
-          <ul>
-            <li>T-SHIRTS</li>
-            <li>SHIRTS</li>
-            <li>CO-ORDS</li>
-            <li>BOTTOM</li>
-            <li>JACKETS</li>
-            <li>ACCESSORIES</li>
-          </ul>
+          <Navmenu />
           <Search />
           <div className={style.cart}>
             <BiShoppingBag size={25} />

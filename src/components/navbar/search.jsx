@@ -1,4 +1,3 @@
-import React from "react";
 import style from "@/styles/nav.module.css";
 import { BiSearchAlt } from "react-icons/bi";
 
