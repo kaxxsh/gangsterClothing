@@ -8,7 +8,8 @@ const Nav = () => {
     <section>
       <div className={style.nav}>
         <div className={style.logo}>
-          <img src="/next.svg" alt="Gangester Clothing" />
+          <img src="/logo.png" alt="Gangester Clothing" />
+          <div className={style.companyName}>GANGSTER CLOTHING</div>
         </div>
         <div className={style.menu}>
           <Navmenu />

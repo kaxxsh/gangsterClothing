@@ -1,3 +1,4 @@
+
 .nav {
   height: 8vh;
   display: flex;
@@ -9,10 +10,20 @@
 
 .nav > .logo {
   margin-left: 2rem;
+  display: flex;
 }
 
 .logo > img {
-  width: 7vw;
+  width: 2.5vw;
+  height: 6vh;
+  filter: invert(100%);
+}
+
+.logo > .companyName {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .nav > .menu {
