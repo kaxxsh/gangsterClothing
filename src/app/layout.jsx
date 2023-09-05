@@ -1,6 +1,4 @@
 import "./globals.css";
-import Nav from "@/components/navbar/nav";
-import Top from "@/components/headerTop";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,12 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <link rel="shortcut icon" href="./logo.png" />
-      <body className={inter.className}>
-        <Top />
-        <Nav />
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

@@ -8,7 +8,9 @@ const Top = () => {
         <div className={styles.title}>Track Orders</div>
         <div className={styles.title}>Store Location</div>
         <div className={styles.title}>Contact Us</div>
-        <div className={styles.login}>Login</div>
+        <div className={styles.login}>
+          <a href="/login">Login</a>
+        </div>
       </div>
     </section>
   );

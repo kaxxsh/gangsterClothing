@@ -1,6 +1,5 @@
-
 .nav {
-  height: 8vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,8 +13,8 @@
 }
 
 .logo > img {
-  width: 2.5vw;
-  height: 6vh;
+  width: 4vw;
+  height: 9vh;
   filter: invert(100%);
 }
 
@@ -44,6 +43,7 @@
   display: inline;
   font-size: 0.7rem;
   margin-right: 20px;
+  font-weight: 600;
   position: relative;
   cursor: pointer;
   text-decoration: none;
@@ -63,7 +63,7 @@
 .navmenu > ul > li:hover::before,
 .navmenu > ul > li.colorchange::before {
   width: 100%;
-  background-color: black;
+  background-color: #333;
 }
 
 .menu > .cart {

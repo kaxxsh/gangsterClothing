@@ -7,8 +7,12 @@ const page = () => {
     <section>
       <div className={style.container}>
         <div className={style.logo}>GANGSTER CLOTHING</div>
-        <div className={style.login}>
-          <div className={style.title}>SIGN IN</div>
+        <div className={style.signup}>
+          <div className={style.title}>SIGN UP</div>
+          <div className={style.inputfield}>
+            <label>Username</label>
+            <input type="text" />
+          </div>
           <div className={style.inputfield}>
             <label>Email or Mobile number</label>
             <input type="text" />
@@ -17,14 +21,14 @@ const page = () => {
             <label>Password</label>
             <input type="text" />
           </div>
+          <div className={style.inputfield}>
+            <label>Conform Password</label>
+            <input type="text" />
+          </div>
           <button>Continue</button>
           <div className={style.terms}>
             By continuing, you agree to gangster clouthing Conditions of Use and
             Privacy Notice.
-          </div>
-          <div className={style.create}>
-            <div className={style.title}>New to gangster?</div>
-            <button>Create your Gangster account</button>
           </div>
         </div>
       </div>

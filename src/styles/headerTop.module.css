@@ -21,6 +21,10 @@
   border-right: 1px solid grey;
 }
 
+.details > .title:hover {
+  transform: scale(1.1);
+}
+
 .details > .login {
   font-size: 0.65rem;
   font-weight: bold;
