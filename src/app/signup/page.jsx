@@ -22,7 +22,7 @@ const page = () => {
             <input type="text" />
           </div>
           <div className={style.inputfield}>
-            <label>Conform Password</label>
+            <label>Confirm Password</label>
             <input type="text" />
           </div>
           <button>Continue</button>
