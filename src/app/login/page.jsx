@@ -24,7 +24,7 @@ const page = () => {
           </div>
           <div className={style.create}>
             <div className={style.title}>New to gangster?</div>
-            <button>Create your Gangster account</button>
+            <a href="/signup">Create your Gangster account</a>
           </div>
         </div>
       </div>
