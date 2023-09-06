@@ -50,7 +50,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
 }
 
 .footerTop > .t2 {
@@ -68,7 +68,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 16px; /* 100% */
+  line-height: 16px;
 }
 
 .t2 > .description {
@@ -76,7 +76,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
 }
 
 .footerTop > .t3 {
@@ -106,7 +106,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 16px; /* 100% */
+  line-height: 16px;
 }
 
 .t3 > .content > .description {
@@ -114,7 +114,7 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
 }
 
 .footer > .contact {
@@ -122,7 +122,8 @@
   border-top: 1px solid #d7d7d7;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .contact > .address {
@@ -164,24 +165,37 @@
   font-size: 0.8rem;
 }
 
-.contact > .links {
+.contact > .links,
+.contact > .category,
+.contact > .support {
   width: 15vw;
   height: 35vh;
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 1rem;
 }
 
-.contact > .links > .title {
+.contact > .links > .title,
+.contact > .category > .title,
+.contact > .support > .title {
   font-weight: bolder;
 }
-.contact > .links > .description > ul {
+.contact > .links > .description > ul,
+.contact > .category > .description > ul {
   font-size: 0.8rem;
   display: flex;
-  flex-direction:column ;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
+.contact > .support > .mail > .title,
+.contact > .support > .phone > .title {
+  font-weight: 500;
+}
+.contact > .support > .mail > .description,
+.contact > .support > .phone > .description {
+  font-size: 0.8rem;
+}
 .footer > .footerdown {
   height: 10vh;
   border-top: 1px solid #d7d7d7;

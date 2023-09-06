@@ -54,27 +54,69 @@ const contact = () => {
             <div className={style.description}>
               <ul>
                 <li>
-                  <a href="">ABOUT US</a>{" "}
+                  <a href="">About Us</a>{" "}
                 </li>
                 <li>
-                  <a href="">RETURN,EXHANGE & REFUND</a>{" "}
+                  <a href="">Return,Exchange & Refund</a>{" "}
                 </li>
                 <li>
-                  <a href="">TERMS AND CONDITIONS</a>{" "}
+                  <a href="">Terms And Conditions</a>{" "}
                 </li>
                 <li>
-                  <a href="">CANCELLATION POLICY</a>{" "}
+                  <a href="">Cancellaction Policy</a>{" "}
                 </li>
                 <li>
-                  <a href="">SHIPPING POLICY</a>{" "}
+                  <a href="">Shipping Policy</a>{" "}
                 </li>
                 <li>
-                  <a href="">HOW TO ORDER</a>{" "}
+                  <a href="">How To Order</a>{" "}
                 </li>
                 <li>
-                  <a href="">CONTACT US</a>{" "}
+                  <a href="">Contact Us</a>{" "}
                 </li>
               </ul>
+            </div>
+          </div>
+          <div className={style.category}>
+            <div className={style.title}>CATEGORY</div>
+            <div className={style.description}>
+              <ul>
+                <li>
+                  {" "}
+                  <a href="">T-shirt</a>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <a href="">Shirt</a>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <a href="">Bottoms</a>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <a href="">jacket</a>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <a href="">Co-ords</a>{" "}
+                </li>
+                <li>
+                  {" "}
+                  <a href="">Accessories</a>{" "}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={style.support}>
+            <div className={style.title}>SUPPORT</div>
+            <div className={style.mail}>
+              <div className={style.title}>Mail</div>
+              <div className={style.description}>email@gmail.com</div>
+            </div>
+            <div className={style.phone}>
+              <div className={style.title}>Phone</div>
+              <div className={style.description}>000000000</div>
             </div>
           </div>
         </div>
