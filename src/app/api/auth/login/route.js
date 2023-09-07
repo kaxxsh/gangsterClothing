@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { authUser } from "../utils/schema.js";
-import { jwtGenrator } from "../utils/jwt.js";
-import dbConnection from "../utils/db.js";
-import comparePassword from "../utils/passCompare.js";
+import { authUser } from "../../utils/schema.js";
+import { jwtGenrator } from "../../utils/jwt.js";
+import dbConnection from "../../utils/db.js";
+import comparePassword from "../../utils/passCompare.js";
 
 dbConnection(process.env.NEXT_PUBLIC_MONGO_URL);
 export async function POST(req) {

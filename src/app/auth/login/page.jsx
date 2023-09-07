@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import style from "@/styles/login.module.css";
 import { toast } from "react-toastify";
+import { BASE_URL } from "@/config";
 
 const Login = () => {
   const [credentials, setcredentials] = useState({
@@ -11,7 +12,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const response = await fetch(BASE_URL + "/api/login", {
+    const response = await fetch(BASE_URL + "/api/auth/login", {
       cache: "no-store",
       credentials: "include",
       method: "POST",
@@ -25,7 +26,6 @@ const Login = () => {
       toast.error(data?.message, { autoClose: 3000 });
     } else {
       toast(data?.message, { autoClose: 1000 });
-      router.push("/profile");
     }
   };
   return (

@@ -1,6 +1,8 @@
 "use client";
 import style from "@/styles/login.module.css";
+import { BASE_URL } from "@/config";
 import { useState } from "react";
+import { toast } from "react-toastify";
 const Signup = () => {
   const [credentials, setcredentials] = useState({
     Username: "",
@@ -9,12 +11,12 @@ const Signup = () => {
     Confirmpassword: "",
   });
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    if (!Password && !Confirmpassword) {
+    if (!credentials.Password && !credentials.Confirmpassword) {
       console.log("password not same");
     }
-    const response = await fetch(BASE_URL + "/api/login", {
+    const response = await fetch(BASE_URL + "/api/auth/signup", {
       cache: "no-store",
       credentials: "include",
       method: "POST",
@@ -29,7 +31,7 @@ const Signup = () => {
       toast.error(data?.message, { autoClose: 3000 });
     } else {
       toast(data?.message, { autoClose: 1000 });
-      router.push("/profile");
+      // router.push("/profile");
     }
   };
   return (
@@ -38,7 +40,7 @@ const Signup = () => {
         <div className={style.logo}>GANGSTER CLOTHING</div>
         <div className={style.signup}>
           <div className={style.title}>SIGN UP</div>
-          <form onSubmit={(e) => setcredentials(e)}>
+          <form onSubmit={(e) => handleSignup(e)}>
             <div className={style.inputfield}>
               <label>Username</label>
               <input
