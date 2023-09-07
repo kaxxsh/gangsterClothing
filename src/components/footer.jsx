@@ -37,9 +37,8 @@ const contact = () => {
             <div className={style.office}>
               <div className={style.title}>Registered Office Address</div>
               <div className={style.description}>
-                Lotus Corporate Park Wing G-02, 15th floor 1502, Ram Mandir
-                Lane, Jay Coach Junction, off Western Express Highway, Goregaon,
-                Mumbai, 400063
+                144/116,2H Lakshmi apartment, pammal main road
+                ,pammal, Chennai- 75
               </div>
             </div>
             <div className={style.timing}>
@@ -128,7 +127,7 @@ const contact = () => {
             <a href="">
               <img src="./footer/facebook.svg" alt="" />
             </a>
-            <a href="">
+            <a href="https://instagram.com/_gangster_clothing?utm_source=qr&igshid=MzNlNGNkZWQ4Mg==" target="_blank">
               <img src="./footer/insta.svg" alt="" />
             </a>
             <a href="">

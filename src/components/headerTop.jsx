@@ -9,7 +9,7 @@ const Top = () => {
         <div className={styles.title}>Store Location</div>
         <div className={styles.title}>Contact Us</div>
         <div className={styles.login}>
-          <a href="/login">Login</a>
+          <a href="/auth/login">Login</a>
         </div>
       </div>
     </section>

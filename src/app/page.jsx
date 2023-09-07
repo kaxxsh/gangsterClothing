@@ -1,13 +1,14 @@
 import React from "react";
+import style from "./page.module.css";
 import Nav from "@/components/navbar/nav";
-import Top from "@/components/headerTop";
 import Contact from "@/components/footer";
+import Main from "@/components/main";
 
 const page = () => {
   return (
     <section>
-      <Top />
       <Nav />
+      <Main />
       <Contact />
     </section>
   );

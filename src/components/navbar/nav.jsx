@@ -2,11 +2,13 @@ import style from "@/styles/nav.module.css";
 import Search from "@/components/navbar/search";
 import Navmenu from "./navmenu";
 import { BiShoppingBag } from "react-icons/bi";
+import Top from "../headerTop";
 
 const Nav = () => {
   return (
     <section>
-      <div className={style.nav}>
+      <Top />
+      <div className={style.nav} >
         <div className={style.logo}>
           <img src="/logo.png" alt="Gangester Clothing" />
           <div className={style.companyName}>GANGSTER CLOTHING</div>

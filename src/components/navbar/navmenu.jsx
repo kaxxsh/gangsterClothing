@@ -3,7 +3,7 @@ import style from "@/styles/nav.module.css";
 import { useState } from "react";
 
 const NavMenu = () => {
-  const [select, setSelect] = useState(1);
+  const [select, setSelect] = useState(0);
   const handleItemClick = (itemNumber) => {
     setSelect(itemNumber);
   };
