@@ -1,7 +1,7 @@
 "use client";
 import style from "@/styles/login.module.css";
 import { useState } from "react";
-const page = () => {
+const Signup = () => {
   const [credentials, setcredentials] = useState({
     Username: "",
     Email: "",
@@ -94,4 +94,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Signup;

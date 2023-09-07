@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import style from "@/styles/login.module.css";
 import { toast } from "react-toastify";
 
-const page = () => {
+const Login = () => {
   const [credentials, setcredentials] = useState({
     Email: "",
     Password: "",
@@ -71,4 +71,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Login;

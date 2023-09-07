@@ -3,7 +3,7 @@ import style from "@/styles/nav.module.css";
 import { BiSearchAlt } from "react-icons/bi";
 import { useState } from "react";
 
-const search = () => {
+const Search = () => {
   const [search, setsearch] = useState("");
   const handleSearch = (e) => {
     e.preventDefault();
@@ -28,4 +28,4 @@ const search = () => {
   );
 };
 
-export default search;
+export default Search;
