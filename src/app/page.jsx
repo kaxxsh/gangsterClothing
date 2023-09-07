@@ -3,11 +3,15 @@ import style from "./page.module.css";
 import Nav from "@/components/navbar/nav";
 import Contact from "@/components/footer";
 import Main from "@/components/main";
+import Top from "@/components/navbar/headerTop";
 
 const page = () => {
   return (
     <section>
-      <Nav />
+      <Top />
+      <div className={style.navbar}>
+        <Nav />
+      </div>
       <Main />
       <Contact />
     </section>
