@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import dbConnection from "../utils/db.js";
-import { authUser } from "../utils/schema.js";
+import { authUser } from "@/app/api/utils/schema.js";
 
 dbConnection(process.env.NEXT_PUBLIC_MONGO_URL);
 export async function POST(req) {
