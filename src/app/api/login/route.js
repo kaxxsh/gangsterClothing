@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { authUser } from "@/app/api/utils/schema.js";
+import { authUser } from "../utils/schema.js";
 import { jwtGenrator } from "../utils/jwt.js";
 import dbConnection from "../utils/db.js";
 import comparePassword from "../utils/passCompare.js";
