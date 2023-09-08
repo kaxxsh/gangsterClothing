@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import style from "@/styles/login.module.css";
+import style from "@/styles/auth/login.module.css";
 import { toast } from "react-toastify";
 import { BASE_URL } from "@/config";
 

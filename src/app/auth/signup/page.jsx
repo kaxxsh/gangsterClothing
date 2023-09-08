@@ -1,5 +1,5 @@
 "use client";
-import style from "@/styles/login.module.css";
+import style from "@/styles/auth/login.module.css";
 import { BASE_URL } from "@/config";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -31,7 +31,6 @@ const Signup = () => {
       toast.error(data?.message, { autoClose: 3000 });
     } else {
       toast(data?.message, { autoClose: 1000 });
-      // router.push("/profile");
     }
   };
   return (

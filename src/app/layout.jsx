@@ -1,5 +1,10 @@
-import "./globals.css";
+"use client";
 import { Inter } from "next/font/google";
+import style from "./page.module.css";
+import Nav from "@/components/navbar/nav";
+import Contact from "@/components/footer/footer";
+import Top from "@/components/navbar/headerTop";
+import { usePathname } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,9 +14,22 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const router = usePathname();
+
+  const excludedPaths = ["/login", "/signup"];
+
+  const shouldExcludeTopAndContact = excludedPaths.includes(router.pathname);
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {!shouldExcludeTopAndContact && <Top />}
+        <div className={style.navbar}>
+          {!shouldExcludeTopAndContact && <Nav />}
+        </div>
+        {children}
+        {!shouldExcludeTopAndContact && <Contact />}
+      </body>
     </html>
   );
 }
