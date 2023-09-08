@@ -87,7 +87,6 @@
   height: 4vh;
   border: 1px solid black;
   border-radius: 0.2rem;
-  z-index: -1;
 }
 
 .login > form > button,
@@ -99,7 +98,6 @@
   border-radius: 0.5rem;
   padding: 0.2rem;
   margin-top: 0.5rem;
-  z-index: -1;
 }
 .login > form > button:hover,
 .signup > form > button:hover {

@@ -1,3 +1,100 @@
-.main {
-  height: 200vh;
+.main > .top {
+  width: 100%;
+  height: 80vh;
+  background-image: url(/public/main/topmodel.jpg);
+}
+
+.main > .top > .title {
+  width: fit-content;
+  font-weight: bolder;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.main > .top > .shopbtn {
+  width: fit-content;
+  font-weight: bolder;
+  padding: 1rem 1.5rem;
+  border: 5px solid;
+}
+
+.main > .updates {
+  height: 120vh;
+}
+
+.main > .updates > .title,
+.main > .Topsellers > .title {
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main > .updates > .title > .subtitle,
+.main > .Topsellers > .title > .subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.main > .updates > .title > .description,
+.main > .Topsellers > .title > .description {
+  font-size: 0.8rem;
+}
+
+.main > .Topsellers > .display,
+.main > .updates > .display {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.main > .buy {
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main > .buy > .shopnow {
+  width: fit-content;
+  border: 1px solid;
+  padding: 1rem 1.5rem;
+  font-size: 0.8rem;
+  background-color: #024e82;
+  color: white;
+}
+
+.main > .buy > .shopnow:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.card {
+  width: 18vw;
+  height: 45vh;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card > img {
+  width: 18vw;
+  height: 35vh;
+  mix-blend-mode: color-burn;
+}
+
+.card > .name {
+  font-weight: bold;
 }
