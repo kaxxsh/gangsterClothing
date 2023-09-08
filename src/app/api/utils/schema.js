@@ -33,10 +33,41 @@ const User = new mongoose.Schema(
   { timestamps: true }
 );
 
+const Product = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    quantity: {
+      type: Number,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
+
 User.pre("save", async function () {
   this.password = await bcrypt.hash(this.password, 10);
 });
 
 const authUser = mongoose.models.authUser || mongoose.model("authUser", User);
+const product = mongoose.models.product || mongoose.model("product", Product);
 
-export { authUser };
+export { authUser, product };
