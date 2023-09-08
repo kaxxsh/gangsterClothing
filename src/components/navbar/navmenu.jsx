@@ -1,5 +1,5 @@
 "use client";
-import style from "@/styles/nav.module.css";
+import styles from "@/styles/nav/nav.module.css";
 import { useState } from "react";
 
 const NavMenu = () => {
@@ -9,40 +9,40 @@ const NavMenu = () => {
   };
 
   return (
-    <div className={style.navmenu}>
+    <div className={styles.navmenu}>
       <ul>
         <li
-          className={select === 1 ? style.colorchange : ""}
+          className={select === 1 ? styles.colorchange : ""}
           onClick={() => handleItemClick(1)}
         >
           T-SHIRTS
         </li>
         <li
-          className={select === 2 ? style.colorchange : ""}
+          className={select === 2 ? styles.colorchange : ""}
           onClick={() => handleItemClick(2)}
         >
           SHIRTS
         </li>
         <li
-          className={select === 3 ? style.colorchange : ""}
+          className={select === 3 ? styles.colorchange : ""}
           onClick={() => handleItemClick(3)}
         >
           CO-ORDS
         </li>
         <li
-          className={select === 4 ? style.colorchange : ""}
+          className={select === 4 ? styles.colorchange : ""}
           onClick={() => handleItemClick(4)}
         >
           BOTTOM
         </li>
         <li
-          className={select === 5 ? style.colorchange : ""}
+          className={select === 5 ? styles.colorchange : ""}
           onClick={() => handleItemClick(5)}
         >
           JACKETS
         </li>
         <li
-          className={select === 6 ? style.colorchange : ""}
+          className={select === 6 ? styles.colorchange : ""}
           onClick={() => handleItemClick(6)}
         >
           ACCESSORIES

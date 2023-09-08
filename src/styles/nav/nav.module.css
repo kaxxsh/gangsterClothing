@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #d7d7d7;
-  background-color: rgb(245, 245, 245);
 }
 
 .nav > .logo {
@@ -69,7 +68,7 @@
 .menu > .cart {
   display: flex;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.3rem;
 }
 
 .search {

@@ -1,7 +1,8 @@
 "use client";
-import style from "@/styles/nav.module.css";
+import style from "@/styles/nav/nav.module.css";
 import { BiSearchAlt } from "react-icons/bi";
 import { useState } from "react";
+import Image from "next/image";
 
 const Search = () => {
   const [search, setsearch] = useState("");
@@ -14,7 +15,12 @@ const Search = () => {
       <form action="submit" onSubmit={handleSearch}>
         <div className={style.search}>
           <div className={style.searchimg}>
-            <BiSearchAlt size={20} />
+            <Image
+              src="/navbar/search.svg"
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            />
           </div>
           <input
             type="search"

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "@/app/page.module.css";
+import style from "@/styles/main/main.module.css";
 
 const main = () => {
   return <div className={style.main}></div>;

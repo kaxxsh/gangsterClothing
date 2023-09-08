@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
   bottom: 0;
+  background-color: #e6e6e6dc;
 }
 .footer > .footerTop {
   height: 16.5vh;
@@ -208,15 +209,27 @@
   justify-content: space-around;
 }
 
-.footerdown > .title {
+.footerdown > .payment {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerdown > .payment > .title {
   font-size: 13px;
-  font-weight: 400;
+  color: #252931;
   line-height: normal;
 }
 
-.footerdown > img {
-  width: 6vw;
-  height: 5vh;
+.footerdown > .payment > .imagedesign {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footerdown > .payment > .imagedesign > img {
+  width: 3vw;
+  height: 2.5vh;
 }
 
 .footerdown > .socialmedia {
@@ -231,7 +244,7 @@
 }
 
 .footer > .copyrights {
-  color: #181b21;
+  color: #d7d7d7;
   display: flex;
   font-size: 0.8rem;
   font-weight: 400;

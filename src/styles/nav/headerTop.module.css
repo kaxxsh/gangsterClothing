@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-color: #e6e6e6dc;
 }
 
 .top > .details {
@@ -21,14 +22,15 @@
   border-right: 1px solid grey;
 }
 
-.details > .title:hover {
-  transform: scale(1.1);
-}
-
 .details > .login {
   font-size: 0.65rem;
   font-weight: bold;
   opacity: 70%;
   letter-spacing: 0.1rem;
   padding: 0 1.35rem;
+}
+
+.details > .title:hover,
+.details > .login:hover {
+  transform: scale(1.1);
 }

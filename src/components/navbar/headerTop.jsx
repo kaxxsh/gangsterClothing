@@ -1,4 +1,4 @@
-import styles from "@/styles/headerTop.module.css";
+import styles from "@/styles/nav/headerTop.module.css";
 
 const Top = () => {
   return (

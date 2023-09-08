@@ -1,21 +1,31 @@
-import style from "@/styles/nav.module.css";
+import styles from "@/styles/nav/nav.module.css";
 import Search from "@/components/navbar/search";
 import Navmenu from "./navmenu";
-import { BiShoppingBag } from "react-icons/bi";
+import Image from "next/image";
 
 const Nav = () => {
   return (
     <section>
-      <div className={style.nav} >
-        <div className={style.logo}>
-          <img src="/logo.png" alt="Gangester Clothing" />
-          <div className={style.companyName}>GANGSTER CLOTHING</div>
+      <div className={styles.nav}>
+        <div className={styles.logo}>
+          <Image
+            src="/logo.png"
+            width={500}
+            height={500}
+            alt="Picture of the author"
+          />
+          <div className={styles.companyName}>GANGSTER CLOTHING</div>
         </div>
-        <div className={style.menu}>
+        <div className={styles.menu}>
           <Navmenu />
           <Search />
-          <div className={style.cart}>
-            <BiShoppingBag size={25} />
+          <div className={styles.cart}>
+            <Image
+              src="/navbar/cart.svg"
+              width={500}
+              height={500}
+              alt="Picture of the author"
+            />
           </div>
         </div>
       </div>
