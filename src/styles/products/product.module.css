@@ -1,0 +1,260 @@
+.product {
+  height: 300vh;
+}
+
+.path {
+  height: 10vh;
+}
+
+.product > .productdisplay {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productdisplay > .imageslist {
+  width: 50vw;
+  height: 90vh;
+  display: flex;
+}
+
+.productdisplay > .imageslist > .imgarray {
+  width: 10vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.productdisplay > .imageslist > .imgarray > img {
+  width: 8vw;
+  height: 20vh;
+  border: 1px solid;
+}
+
+.productdisplay > .imageslist > .imgview {
+  width: 40vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.productdisplay > .imageslist > .imgview > img {
+  width: 38vw;
+  height: 85vh;
+}
+.productdisplay > .productdetails {
+  width: 40vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.productdisplay > .productdetails > .productcard {
+  width: 35vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.productcard > .productname {
+  font-size: 3.5rem;
+}
+
+.productdetails > .productcard > .productprice {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.productcard > .productprice > .currentprice {
+  font-weight: bolder;
+}
+
+.productcard > .productprice > .oldprice {
+  text-decoration: line-through;
+}
+
+.productcard > .productcolours,
+.productcard > .productsizes {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.productcard > .productcolours > .colourname,
+.productcard > .productsizes > .sizename {
+  font-weight: bolder;
+}
+.productcard > .productcolours > .colourname > .span,
+.productcard > .productsizes > .sizename > .span {
+  font-weight: 200;
+  margin-left: 1rem;
+}
+.productcard > .productcolours > .colourlist,
+.productcard > .productsizes > .sizelist {
+  display: flex;
+  margin-top: 1rem;
+  gap: 2rem;
+}
+.productcard > .productcolours > .colourlist > .card,
+.productcard > .productsizes > .sizelist > .card {
+  width: 2vw;
+  height: 4vh;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productcard > .addcart {
+  display: flex;
+  align-items: center;
+  height: 15vh;
+  gap: 5rem;
+  padding: 1rem;
+}
+
+.productcard > .addcart > .quantity {
+  display: flex;
+  height: 6vh;
+  border: 2px solid;
+  border-radius: 0.5rem;
+  font-weight: bolder;
+}
+
+.quantity > .add {
+  width: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid;
+  background-color: rgb(83, 83, 83);
+  color: white;
+}
+.quantity > .sub {
+  width: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid;
+  background-color: rgb(83, 83, 83);
+  color: white;
+}
+
+.quantity > .count {
+  width: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addcart > .cart {
+  border: 2px solid;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bolder;
+}
+
+.addcart > .cart:hover {
+  background-color: black;
+  color: white;
+}
+
+.productdetails > .productcard > .buy {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.buy > .buybtn {
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+}
+
+.buy > .buybtn:hover,
+.quantity > .sub:hover,
+.quantity > .add:hover {
+  background-color: white;
+  color: black;
+}
+
+.product > .review {
+  height: 30vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product > .review > .customer > .title {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding: 1rem;
+  margin-left: 1rem;
+}
+.product > .review > .customer > .star {
+  margin-left: 3rem;
+}
+
+.product > .review > .sendreview {
+  padding: 1rem;
+  margin: 2rem;
+  border: 1px solid white;
+}
+
+.product > .productdetails {
+  height: 15vh;
+  border-bottom: 1px solid;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.product > .productdetails > .title {
+  font-weight: 400;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+.product > .productdetails > .titleclick {
+  font-weight: bolder;
+  padding: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.clothdescription {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policy {
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.policy > .description {
+  width: 80vw;
+}

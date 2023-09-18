@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const page = () => {
+const Area51 = () => {
   const [product, setProduct] = useState({
     name: "",
     price: "",
@@ -67,4 +67,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Area51;
