@@ -125,27 +125,27 @@ const contact = () => {
             <div className={styles.title}>100% Secure Payment</div>
             <div className={styles.imagedesign}>
               <Image
-                src="/footer/cod.svg"
-                width={500}
-                height={500}
+                src="./footer/cod.svg"
+                width={24}
+                height={24}
                 alt="Picture of the author"
               />
               <Image
-                src="/footer/gpay.svg"
-                width={500}
-                height={500}
+                src="./footer/gpay.svg"
+                width={24}
+                height={24}
                 alt="Picture of the author"
               />
               <Image
-                src="/footer/amazonpay.svg"
-                width={500}
-                height={500}
+                src="./footer/amazonpay.svg"
+                width={24}
+                height={24}
                 alt="Picture of the author"
               />
               <Image
-                src="/footer/card.svg"
-                width={500}
-                height={500}
+                src="./footer/card.svg"
+                width={24}
+                height={24}
                 alt="Picture of the author"
               />
             </div>
@@ -154,9 +154,9 @@ const contact = () => {
             <div className="">Follow us:</div>
             <a href="">
               <Image
-                src="/footer/facebook.svg"
-                width={500}
-                height={500}
+                src="./footer/facebook.svg"
+                width={24}
+                height={24}
                 alt="Picture of the author"
               />
             </a>
@@ -165,17 +165,17 @@ const contact = () => {
               target="_blank"
             >
               <Image
-                src="/footer/insta.svg"
-                width={500}
-                height={500}
+                src="./footer/insta.svg"
+                width={24}
+                height={24}
                 alt="Picture of the author"
               />
             </a>
             <a href="">
               <Image
-                src="/footer/telegram.svg"
-                width={500}
-                height={500}
+                src="./footer/telegram.svg"
+                width={24}
+                height={24}
                 alt="Picture of the author"
               />
             </a>

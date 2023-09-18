@@ -10,8 +10,8 @@ const Nav = () => {
         <div className={styles.logo}>
           <Image
             src="/logo.png"
-            width={500}
-            height={500}
+            width={24}
+            height={24}
             alt="Picture of the author"
           />
           <div className={styles.companyName}>GANGSTER CLOTHING</div>
@@ -22,8 +22,8 @@ const Nav = () => {
           <div className={styles.cart}>
             <Image
               src="/navbar/cart.svg"
-              width={500}
-              height={500}
+              width={24}
+              height={24}
               alt="Picture of the author"
             />
           </div>

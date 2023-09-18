@@ -17,8 +17,8 @@ const Search = () => {
           <div className={style.searchimg}>
             <Image
               src="/navbar/search.svg"
-              width={500}
-              height={500}
+              width={24}
+              height={24}
               alt="Picture of the author"
             />
           </div>
