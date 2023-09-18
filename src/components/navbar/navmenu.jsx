@@ -8,6 +8,8 @@ const NavMenu = () => {
     setSelect(itemNumber);
   };
 
+  
+
   return (
     <div className={styles.navmenu}>
       <ul>
@@ -15,37 +17,37 @@ const NavMenu = () => {
           className={select === 1 ? styles.colorchange : ""}
           onClick={() => handleItemClick(1)}
         >
-          T-SHIRTS
+          <a href="/products/tshirt">T-SHIRTS</a>
         </li>
         <li
           className={select === 2 ? styles.colorchange : ""}
           onClick={() => handleItemClick(2)}
         >
-          SHIRTS
+          <a href="/products/shirt">SHIRTS</a>
         </li>
         <li
           className={select === 3 ? styles.colorchange : ""}
           onClick={() => handleItemClick(3)}
         >
-          CO-ORDS
+          <a href="/products/coords">CO-ORDS</a>
         </li>
         <li
           className={select === 4 ? styles.colorchange : ""}
           onClick={() => handleItemClick(4)}
         >
-          BOTTOM
+          <a href="/products/bottom">BOTTOM</a>
         </li>
         <li
           className={select === 5 ? styles.colorchange : ""}
           onClick={() => handleItemClick(5)}
         >
-          JACKETS
+          <a href="/products/jackets">JACKETS</a>
         </li>
         <li
           className={select === 6 ? styles.colorchange : ""}
           onClick={() => handleItemClick(6)}
         >
-          ACCESSORIES
+          <a href="/products/accessories">ACCESSORIES</a>
         </li>
       </ul>
     </div>

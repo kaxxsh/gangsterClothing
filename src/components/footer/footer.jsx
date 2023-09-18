@@ -8,7 +8,7 @@ const contact = () => {
       <div className={styles.footer}>
         <div className={styles.footerTop}>
           <div className={styles.t1}>
-            <img src="./footer/quality.svg" alt="" />
+            <img src="/footer/quality.svg" alt="" />
             <div className={styles.content}>
               <div className={styles.title}>Premium Quality</div>
               <div className={styles.description}>
@@ -24,7 +24,7 @@ const contact = () => {
             </div>
           </div>
           <div className={styles.t3}>
-            <img src="./footer/return.svg" alt="" />
+            <img src="/footer/return.svg" alt="" />
             <div className={styles.content}>
               <div className={styles.title}>7 Days Return</div>
               <div className={styles.description}>
@@ -125,25 +125,25 @@ const contact = () => {
             <div className={styles.title}>100% Secure Payment</div>
             <div className={styles.imagedesign}>
               <Image
-                src="./footer/cod.svg"
+                src="/footer/cod.svg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
               />
               <Image
-                src="./footer/gpay.svg"
+                src="/footer/gpay.svg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
               />
               <Image
-                src="./footer/amazonpay.svg"
+                src="/footer/amazonpay.svg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
               />
               <Image
-                src="./footer/card.svg"
+                src="/footer/card.svg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
@@ -154,7 +154,7 @@ const contact = () => {
             <div className="">Follow us:</div>
             <a href="">
               <Image
-                src="./footer/facebook.svg"
+                src="/footer/facebook.svg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
@@ -165,7 +165,7 @@ const contact = () => {
               target="_blank"
             >
               <Image
-                src="./footer/insta.svg"
+                src="/footer/insta.svg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
@@ -173,7 +173,7 @@ const contact = () => {
             </a>
             <a href="">
               <Image
-                src="./footer/telegram.svg"
+                src="/footer/telegram.svg"
                 width={500}
                 height={500}
                 alt="Picture of the author"

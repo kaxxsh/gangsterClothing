@@ -61,7 +61,7 @@
 }
 
 .navmenu > ul > li:hover::before,
-.navmenu > ul > li.colorchange::before {
+.navmenu > ul > li > a.colorchange::before {
   width: 100%;
   background-color: #333;
 }

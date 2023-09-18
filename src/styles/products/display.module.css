@@ -1,0 +1,68 @@
+.display {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.filter {
+  width: 20vw;
+  min-height: 100vh;
+}
+
+.products {
+  width: 80vw;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.card {
+  width: 15vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  margin: 3rem;
+}
+.card:hover {
+  transform: scale(1.02);
+
+}
+
+.card > .details {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card > img {
+  width: 14vw;
+  height: 38vh;
+  mix-blend-mode: color-burn;
+}
+
+.card > .details > .name {
+  font-weight: bolder;
+}
+
+.card > .details > .pricedetails {
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+}
+.card > .details > .pricedetails > .currentprice {
+  font-size: 0.8rem;
+}
+.card > .details > .pricedetails > .oldprice {
+  color: #6f6f6f;
+  text-decoration: line-through;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: flex-end;
+}
