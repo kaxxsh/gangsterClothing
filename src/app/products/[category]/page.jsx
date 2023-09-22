@@ -1,5 +1,5 @@
 "use client";
-import styles from "@/styles/products/display.module.css";
+import styles from "@/styles/products/display.module.scss";
 import { useParams } from "next/navigation";
 
 const page = () => {

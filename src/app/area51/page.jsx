@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import styles from "@/styles/area51.module.scss";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Area51 = () => {
+  const pathname = usePathname();
   const [product, setProduct] = useState({
     name: "",
     price: "",
@@ -11,60 +15,7 @@ const Area51 = () => {
     image: "",
     category: "",
   });
-  return (
-    <div>
-      <h1>add new product</h1>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          fetch("/api/area51", {
-            method: "POST",
-            body: JSON.stringify(product),
-          });
-        }}
-      >
-        <input
-          type="text"
-          placeholder="name"
-          value={product.name}
-          onChange={(e) => setProduct({ ...product, name: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="price"
-          value={product.price}
-          onChange={(e) => setProduct({ ...product, price: e.target.value })}
-        />
-        <input
-          type="number"
-          placeholder="quantity"
-          value={product.quantity}
-          onChange={(e) => setProduct({ ...product, quantity: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="description"
-          value={product.description}
-          onChange={(e) =>
-            setProduct({ ...product, description: e.target.value })
-          }
-        />
-        <input
-          type="text"
-          placeholder="image"
-          value={product.image}
-          onChange={(e) => setProduct({ ...product, image: e.target.value })}
-        />
-        <input
-          type="text"
-          placeholder="category"
-          value={product.category}
-          onChange={(e) => setProduct({ ...product, category: e.target.value })}
-        />
-        <button type="submit">Add</button>
-      </form>
-    </div>
-  );
+  return <div className={styles.test}>Hello</div>;
 };
 
 export default Area51;
