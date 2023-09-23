@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
             Analytics
           </Link>
         </div>
-        {children}
+        <div className={styles.main}>{children}</div>
       </div>
     </div>
   );

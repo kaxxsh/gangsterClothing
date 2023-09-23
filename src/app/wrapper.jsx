@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const Wrapper = ({ children }) => {
   const pathname = usePathname();
   return (
-    <div>
+    <>
       {pathname.includes("area51") || pathname.includes("login") || pathname.includes("signup") ? (
         children
       ) : (
@@ -19,7 +19,7 @@ const Wrapper = ({ children }) => {
           <Contact />
         </>
       )}
-    </div>
+    </>
   );
 };
 

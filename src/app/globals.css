@@ -1,9 +1,26 @@
 * {
   user-select: none;
+  box-sizing: border-box;
 }
 
 body {
   overflow-x: hidden;
+  /* fix */
   margin: 0 !important;
   padding: 0 !important;
+}
+
+label {
+  font-size: 0.8rem;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1a1a1a;
+  /* border-radius: 10px; */
 }
