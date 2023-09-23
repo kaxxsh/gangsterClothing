@@ -1,15 +1,25 @@
 "use client";
-import styles from "@/styles/products/display.module.scss";
+import styles from "@/styles/products/display.module.css";
 import { useParams } from "next/navigation";
 
 const page = () => {
   const params = useParams();
-  console.log(params);
+
+  useEffect(() => {
+    console.log(params);
+  }, []);
 
   return (
     <section>
       <div className={styles.display}>
-        <div className={styles.filter}></div>
+        <div className={styles.filter}>
+          <div className="">Filter</div>
+          <div className="">
+            <div className="">PRICE</div>
+            <div className="">high to low</div>
+            <div className="">low to high</div>
+          </div>
+        </div>
         <div className={styles.products}>
           <a href="">
             <div className={styles.card}>

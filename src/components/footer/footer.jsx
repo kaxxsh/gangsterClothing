@@ -125,25 +125,25 @@ const contact = () => {
             <div className={styles.title}>100% Secure Payment</div>
             <div className={styles.imagedesign}>
               <Image
-                src="./footer/cod.svg"
+                src="/footer/cod.svg"
                 width={24}
                 height={24}
                 alt="Picture of the author"
               />
               <Image
-                src="./footer/gpay.svg"
+                src="/footer/gpay.svg"
                 width={24}
                 height={24}
                 alt="Picture of the author"
               />
               <Image
-                src="./footer/amazonpay.svg"
+                src="/footer/amazonpay.svg"
                 width={24}
                 height={24}
                 alt="Picture of the author"
               />
               <Image
-                src="./footer/card.svg"
+                src="/footer/card.svg"
                 width={24}
                 height={24}
                 alt="Picture of the author"
@@ -154,7 +154,7 @@ const contact = () => {
             <div className="">Follow us:</div>
             <a href="">
               <Image
-                src="./footer/facebook.svg"
+                src="/footer/facebook.svg"
                 width={24}
                 height={24}
                 alt="Picture of the author"
@@ -165,7 +165,7 @@ const contact = () => {
               target="_blank"
             >
               <Image
-                src="./footer/insta.svg"
+                src="/footer/insta.svg"
                 width={24}
                 height={24}
                 alt="Picture of the author"
@@ -173,7 +173,7 @@ const contact = () => {
             </a>
             <a href="">
               <Image
-                src="./footer/telegram.svg"
+                src="/footer/telegram.svg"
                 width={24}
                 height={24}
                 alt="Picture of the author"

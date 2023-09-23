@@ -26,16 +26,20 @@
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
-.main > .top > .content > .shopbtn {
+.main > .top > .content > .shopbtn > a {
   width: fit-content;
   font-weight: bolder;
   padding: 1rem 1.5rem;
   border: 5px solid white;
+  color: white;
 }
 
 .main > .top > .content > .shopbtn:hover {
   background-color: black;
   transform: scale(1.1);
+}
+.main > .top > .content > .shopbtn > a:hover {
+  background-color: black;
 }
 
 .main > .updates {
@@ -81,7 +85,7 @@
   justify-content: center;
 }
 
-.main > .buy > .shopnow {
+.main > .buy > .shopnow > a {
   width: fit-content;
   border: 1px solid;
   padding: 1rem 1.5rem;
@@ -90,7 +94,7 @@
   color: white;
 }
 
-.main > .buy > .shopnow:hover {
+.main > .buy > .shopnow > a:hover {
   background-color: #fff;
   color: black;
 }
@@ -125,7 +129,10 @@
 .card > .details > .name {
   font-weight: bolder;
 }
-
+.card > .category > .name {
+  font-weight: bolder;
+  margin: 1.5rem;
+}
 .card > .details > .pricedetails {
   display: flex;
   gap: 1rem;

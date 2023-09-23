@@ -88,6 +88,7 @@
 
 .search > input {
   background: transparent;
+  border: none;
 }
 
 .search > input::placeholder {
