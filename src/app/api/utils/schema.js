@@ -35,29 +35,44 @@ const User = new mongoose.Schema(
 
 const Product = new mongoose.Schema(
   {
-    name: {
+    title: {
       type: String,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-    quantity: {
-      type: Number,
       required: true,
     },
     description: {
       type: String,
       required: true,
     },
-    image: {
-      type: String,
+    media: {
+      type: Array,
       required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    compare: {
+      type: Number,
     },
     category: {
       type: String,
       required: true,
+      enum: ["tshirt", "shirt", "coord", "jacket", "bottom", "accessory"],
+    },
+    status: {
+      type: String,
+      required: true,
+      enum: ["active", "inactive"],
+    },
+    stock: {
+      type: Number,
+      required: true,
+    },
+    sizes: {
+      type: Array,
+    },
+    colors: {
+      type: Array,
     },
   },
   { timestamps: true }

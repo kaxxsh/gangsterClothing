@@ -1,8 +1,10 @@
 "use client";
 
+import { BASE_URL } from "@/config";
 import styles from "@/styles/area51.module.scss";
 import { colorNameToCode } from "color-name-to-code";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const page = () => {
   const [colors, setColors] = useState([]);
@@ -14,9 +16,36 @@ const page = () => {
     price: "",
     compare: "",
     category: "",
-    status: null,
+    stock: "",
+    status: "active",
   });
 
+  const handleSubmit = async () => {
+    const formData = new FormData();
+    for (const key in form) {
+      formData.append(key, form[key]);
+    }
+    for (let i = 0; i < images.length; i++) {
+      console.log(images[i].name);
+      formData.append("files", images[i]);
+    }
+    formData.append("colors", JSON.stringify(colors));
+    formData.append("sizes", JSON.stringify(sizes));
+    const response = fetch(BASE_URL + "/api/area51/add", {
+      cache: "no-store",
+      credentials: "include",
+      method: "POST",
+      body: formData,
+    });
+    toast.promise(response, {
+      pending: "Adding product...",
+      success: "Product Added!",
+      error: "Error adding product!",
+    });
+    const data = await response.then((response) => response.json());
+  };
+
+  // error handling wip
   return (
     <div className={styles.products}>
       <div className={styles.top}> {"<"}- Add Product</div>
@@ -69,6 +98,7 @@ const page = () => {
               </button>
               <input
                 hidden
+                multiple
                 type="file"
                 name="img"
                 id="img"
@@ -193,7 +223,12 @@ const page = () => {
               <option value="false">Inactive</option>
             </select>
             <label htmlFor="stock">Stock</label>
-            <input aria-autocomplete="list" type="number" name="stock" />
+            <input
+              aria-autocomplete="list"
+              type="number"
+              name="stock"
+              onChange={(e) => setForm({ ...form, stock: e.target.value })}
+            />
             <div className={styles.checkbox}>
               <input type="checkbox" name="outofstock" />
               <label htmlFor="outofstock">Continue selling when out of stock</label>
@@ -210,7 +245,7 @@ const page = () => {
             </div>
             <div className={styles["button-container"]}>
               <button>Preview</button>
-              <button>Add Product</button>
+              <button onClick={handleSubmit}>Add Product</button>
             </div>
           </div>
         </div>

@@ -3,13 +3,6 @@ import { jwtVerifier } from "./app/api/utils/jwt";
 
 export async function middleware(req) {
   const res = NextResponse.next();
-  // const regex = /api\/users\/(.*)/;
-  // const id = regex.exec(req.nextUrl.pathname)[1];
-  // if (id && (req.method === "PUT" || req.method === "POST")) {
-  //   if (user !== id) {
-  //     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-  //   }
-  // }
 
   // profile page token verification
   if (req.nextUrl.pathname === "/profile") {
@@ -33,7 +26,7 @@ export async function middleware(req) {
     try {
       const token = req.cookies.get("token")?.value;
       if (token) {
-        return NextResponse.redirect(new URL("/profile", req.url));
+        return NextResponse.redirect(new URL("/", req.url));
       }
     } catch (error) {
       console.log(error);

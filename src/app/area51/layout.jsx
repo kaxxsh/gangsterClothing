@@ -4,7 +4,7 @@ import styles from "@/styles/area51.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function RootLayout({ children }) {
+export default function Area51Layout({ children }) {
   const pathname = usePathname();
   return (
     <div className={styles.area51}>
