@@ -1,6 +1,5 @@
 "use client";
 import styles from "@/styles/products/display.module.css";
-import { useEffect } from "react";
 import { useParams } from "next/navigation";
 
 const page = () => {
