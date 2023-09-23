@@ -83,6 +83,7 @@
   }
 
   textarea {
+    font-family: inherit;
     height: 8rem;
     resize: none;
   }
@@ -137,10 +138,13 @@
   }
 }
 
-.chipinfo {
+.tooltip {
   font-size: 0.8rem;
-  margin-bottom: 0.5rem;
   color: rgb(150, 150, 150);
+  padding-left: 0.2rem;
+  &::before {
+    content: "\24D8\00A0";
+  }
 }
 
 .products {
@@ -228,8 +232,6 @@
 
       .status {
         @include section;
-        margin-top: 0;
-
         .checkbox {
           padding-top: 0.5rem;
           display: flex;
@@ -247,6 +249,7 @@
 
       .category {
         @include section;
+        margin-top: 0;
       }
 
       .submit {

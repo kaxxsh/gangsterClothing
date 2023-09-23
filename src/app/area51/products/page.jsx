@@ -8,6 +8,14 @@ const page = () => {
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [images, setImages] = useState([]);
+  const [form, setForm] = useState({
+    title: "",
+    description: "",
+    price: "",
+    compare: "",
+    category: "",
+    status: null,
+  });
 
   return (
     <div className={styles.products}>
@@ -16,9 +24,21 @@ const page = () => {
         <div className={styles.left}>
           <div className={styles.text}>
             <label htmlFor="title">Title</label>
-            <input aria-autocomplete="list" type="text" name="title" />
+            <input
+              aria-autocomplete="list"
+              type="text"
+              name="title"
+              placeholder="Enter title"
+              onChange={(e) => setForm({ ...form, title: e.target.value })}
+            />
             <label htmlFor="description">Description</label>
-            <textarea type="text" name="description" />
+            <textarea
+              spellCheck="false"
+              type="text"
+              name="description"
+              placeholder="Enter description"
+              onChange={(e) => setForm({ ...form, description: e.target.value })}
+            />
           </div>
           <div className={styles.media}>
             <label htmlFor="media">Media</label>
@@ -60,9 +80,25 @@ const page = () => {
           </div>
           <div className={styles.price}>
             <label htmlFor="price">Price</label>
-            <input aria-autocomplete="list" type="number" name="price" />
+            <input
+              aria-autocomplete="list"
+              type="number"
+              name="price"
+              placeholder="Enter price"
+              onChange={(e) => setForm({ ...form, price: e.target.value })}
+            />
             <label htmlFor="compare">Compare-at price</label>
-            <input aria-autocomplete="list" type="number" name="compare" />
+            <input
+              aria-autocomplete="list"
+              type="number"
+              name="compare"
+              placeholder="Enter compare-at price"
+              onChange={(e) => setForm({ ...form, compare: e.target.value })}
+            />
+            <div className={styles.tooltip}>
+              To display a markdown, enter a value higher than your price. Often shown with a
+              strikethrough.
+            </div>
           </div>
           <div className={styles.variant}>
             <label htmlFor="size">Size</label>
@@ -80,6 +116,9 @@ const page = () => {
               <input aria-autocomplete="list" type="text" name="size" />
               <button type="submit">Add</button>
             </form>
+            {sizes.length > 0 && (
+              <div className={styles.tooltip}>Click on the chips to remove them</div>
+            )}
             <div className={styles["chip-container"]}>
               {sizes.map((item) => {
                 return (
@@ -94,9 +133,6 @@ const page = () => {
                 );
               })}
             </div>
-            {sizes.length > 0 && (
-              <div className={styles.chipinfo}>Click on the chips to remove them</div>
-            )}
             <label htmlFor="color">Color</label>
             <form
               className={styles["color-container"]}
@@ -112,6 +148,9 @@ const page = () => {
               <input aria-autocomplete="list" type="text" name="color" />
               <button type="submit">Add</button>
             </form>
+            {colors.length > 0 && (
+              <div className={styles.tooltip}>Click on the chips to remove them</div>
+            )}
             <div className={styles["chip-container"]}>
               {colors.map((item) => {
                 return (
@@ -129,28 +168,16 @@ const page = () => {
                 );
               })}
             </div>
-            {colors.length > 0 && (
-              <div className={styles.chipinfo}>Click on the chips to remove them</div>
-            )}
           </div>
         </div>
         <div className={styles.right}>
-          <div className={styles.status}>
-            <label htmlFor="status">Status</label>
-            <select name="status">
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
-            </select>
-            <label htmlFor="stock">Stock</label>
-            <input aria-autocomplete="list" type="number" name="stock" />
-            <div className={styles.checkbox}>
-              <input type="checkbox" name="outofstock" />
-              <label htmlFor="outofstock">Continue selling when out of stock</label>
-            </div>
-          </div>
           <div className={styles.category}>
             <label htmlFor="category">Category</label>
-            <select name="category">
+            <select
+              name="category"
+              onChange={(e) => setForm({ ...form, category: e.target.value })}
+            >
+              <option value="">Select a category</option>
               <option value="tshirt">T-Shirts</option>
               <option value="shirt">Shirts</option>
               <option value="coord">Co-ords</option>
@@ -159,8 +186,28 @@ const page = () => {
               <option value="accessory">Accessories</option>
             </select>
           </div>
+          <div className={styles.status}>
+            <label htmlFor="status">Status</label>
+            <select name="status" onChange={(e) => setForm({ ...form, status: e.target.value })}>
+              <option value="true">Active</option>
+              <option value="false">Inactive</option>
+            </select>
+            <label htmlFor="stock">Stock</label>
+            <input aria-autocomplete="list" type="number" name="stock" />
+            <div className={styles.checkbox}>
+              <input type="checkbox" name="outofstock" />
+              <label htmlFor="outofstock">Continue selling when out of stock</label>
+            </div>
+            <div className={styles.tooltip}>
+              Customers can still order the product, but you can complete sales when inventory is
+              available.
+            </div>
+          </div>
           <div className={styles.submit}>
             Make sure you recheck all the details before adding the product to the store
+            <div className={styles.tooltip}>
+              Please note that the item details can be changed at any time through Area 51.
+            </div>
             <div className={styles["button-container"]}>
               <button>Preview</button>
               <button>Add Product</button>

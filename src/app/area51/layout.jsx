@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
   const pathname = usePathname();
   return (
     <div className={styles.area51}>
-      <div className={styles.nav}>Area51</div>
+      <div className={styles.nav}>&lt;Area 51 /&gt;</div>
       <div className={styles.container}>
         <div className={styles.sidebar}>
           <Link
