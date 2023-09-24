@@ -1,12 +1,26 @@
 "use client";
 import styles from "@/styles/products/display.module.scss";
+import { useEffect } from "react";
 import { useParams } from "next/navigation";
+import { BASE_URL } from "@/config";
+
+//open browser
 
 const page = () => {
   const params = useParams();
 
   useEffect(() => {
-    console.log(params);
+    console.log(params.category);
+    const { data } = fetch(
+      BASE_URL + `/api/area51/product/${params.category}`,
+      {
+        cache: "no-store",
+        credentials: "include",
+        method: "GET",
+      }
+    ).then((res) => console.log(res));
+
+    
   }, []);
 
   return (

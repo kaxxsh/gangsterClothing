@@ -23,9 +23,11 @@ export async function POST(req) {
           const bytes = await files[i].arrayBuffer();
           const buffer = Buffer.from(bytes);
           const path = "/tmp/" + files[i].name;
+          console.log(path);
           try {
             await writeFile(path, buffer);
           } catch (error) {
+            console.log(error);
             return NextResponse.json({ message: error.message }, { status: 500 });
           }
           const { secure_url } = await cloudinary.uploader.upload(path, {
