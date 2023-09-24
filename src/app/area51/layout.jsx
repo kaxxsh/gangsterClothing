@@ -12,25 +12,33 @@ export default function Area51Layout({ children }) {
       <div className={styles.container}>
         <div className={styles.sidebar}>
           <Link
-            className={pathname == "/area51/home" || (pathname == "/area51" && styles.active)}
+            className={
+              pathname == "/area51/home" || (pathname == "/area51" ? styles.active : undefined)
+            }
             href="/area51"
           >
             Home
           </Link>
-          <Link className={pathname == "/area51/orders" && styles.active} href="/area51/orders">
+          <Link
+            className={pathname.includes("/area51/orders") ? styles.active : undefined}
+            href="/area51/orders"
+          >
             Orders
           </Link>
-          <Link className={pathname == "/area51/products" && styles.active} href="/area51/products">
+          <Link
+            className={pathname.includes("/area51/products") ? styles.active : undefined}
+            href="/area51/products"
+          >
             Products
           </Link>
           <Link
-            className={pathname == "/area51/customers" && styles.active}
+            className={pathname.includes("/area51/customers") ? styles.active : undefined}
             href="/area51/customers"
           >
             Customers
           </Link>
           <Link
-            className={pathname == "/area51/analytics" && styles.active}
+            className={pathname.includes("/area51/analytics") ? styles.active : undefined}
             href="/area51/analytics"
           >
             Analytics

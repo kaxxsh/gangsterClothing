@@ -2,7 +2,6 @@ import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
 const jwtGenrator = async ({ payload }) => {
-  console.log("payload", payload.toString());
   const user = payload.toString();
   const alg = "HS256";
   return await new SignJWT({ user })

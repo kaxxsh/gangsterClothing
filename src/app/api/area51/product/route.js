@@ -43,13 +43,20 @@ export async function POST(req) {
         colors: JSON.parse(data.colors),
         sizes: JSON.parse(data.sizes),
       });
-      console.log(res);
     } catch (error) {
       console.log(error);
     }
     return NextResponse.json({ message: "Product Added" }, { status: 200 });
   } catch (error) {
-    console.log(error);
     return NextResponse.json({ message: error.message }, { status: 500 });
+  }
+}
+
+export async function GET(req) {
+  try {
+    const res = await product.find();;
+    return NextResponse.json({ data: res }, { status: 200 });
+  } catch (error) {
+    console.log(error);
   }
 }

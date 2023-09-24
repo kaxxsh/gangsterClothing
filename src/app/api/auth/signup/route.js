@@ -6,7 +6,6 @@ dbConnection(process.env.NEXT_PUBLIC_MONGO_URL);
 export async function POST(req) {
   try {
     const { Username, Email, Password } = await req.json();
-    console.log(req.json());
     if (!Email || !Password || !Username) {
       return NextResponse.json(
         { message: "Email or Password or Username is missing" },
