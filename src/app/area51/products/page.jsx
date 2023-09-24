@@ -24,36 +24,40 @@ const page = async () => {
       </div>
       <div className={styles.content}>
         <table>
-          <tr>
-            <th></th>
-            <th>Product</th>
-            <th>Status</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Stock</th>
-          </tr>
-          {data.map((item) => {
-            return (
-              <tr>
-                <td>
-                  <img
-                    src={item.media[0]}
-                    alt="prooduct image"
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                </td>
-                <td>{item.title}</td>
-                <td>
-                  <div className={item.status == "active" ? styles.active : styles.inactive}>
-                    {item.status}
-                  </div>
-                </td>
-                <td>{item.category}</td>
-                <td>{item.price}</td>
-                <td>{item.stock}</td>
-              </tr>
-            );
-          })}
+          <thead>
+            <tr>
+              <th></th>
+              <th>Product</th>
+              <th>Status</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => {
+              return (
+                <tr key={item._id}>
+                  <td>
+                    <img
+                      src={item.media[0]}
+                      alt="prooduct image"
+                      style={{ width: "40px", height: "40px", objectFit: "cover" }}
+                    />
+                  </td>
+                  <td>{item.title}</td>
+                  <td>
+                    <div className={item.status == "active" ? styles.active : styles.inactive}>
+                      {item.status}
+                    </div>
+                  </td>
+                  <td>{item.category}</td>
+                  <td>{item.price}</td>
+                  <td>{item.stock}</td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </div>
     </div>

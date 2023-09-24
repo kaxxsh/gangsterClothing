@@ -296,11 +296,13 @@
       overflow: hidden;
       // border: 1px solid #1a1a1a;
       border-radius: 10px;
-      tr {
-        cursor: pointer;
-        &:nth-child(1) {
+      thead {
+        tr {
           background-color: #f7f7f7;
         }
+      }
+      tr {
+        cursor: pointer;
         &:hover {
           background-color: #f7f7f7;
         }
@@ -309,9 +311,7 @@
           border: none;
           text-transform: capitalize;
           padding: 0.5rem;
-
           border-bottom: 1px solid #dadada;
-
           &:nth-child(1) {
             width: 5%;
             text-align: center;

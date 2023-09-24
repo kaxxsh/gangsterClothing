@@ -50,7 +50,7 @@ const page = () => {
     <div className={styles.products}>
       <div className={styles.top}>
         <span>
-          <Link href="/area51/products">{"<"}- &nbsp;</Link>
+          <Link href="/area51/products">{"<"}-&nbsp;</Link>
         </span>
         Add Product
       </div>
