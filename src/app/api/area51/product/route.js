@@ -19,30 +19,44 @@ export async function POST(req) {
     const files = formData.getAll("files");
     if (files) {
       for (let i = 0; i < files.length; i++) {
-        const bytes = await files[i].arrayBuffer();
-        const buffer = Buffer.from(bytes);
-        const path = "/tmp/" + files[i].name;
-        try {
-          await writeFile(path, buffer);
-        } catch (error) {
-          return NextResponse.json({ message: error.message }, { status: 500 });
+        if (typeof files[i] === "object") {
+          const bytes = await files[i].arrayBuffer();
+          const buffer = Buffer.from(bytes);
+          const path = "/tmp/" + files[i].name;
+          try {
+            await writeFile(path, buffer);
+          } catch (error) {
+            return NextResponse.json({ message: error.message }, { status: 500 });
+          }
+          const { secure_url } = await cloudinary.uploader.upload(path, {
+            public_id: randomUUID(),
+            folder: "test",
+          });
+          formData.append("media", secure_url);
+          fs.unlinkSync(path);
+        } else {
+          formData.append("media", files[i]);
         }
-        const { secure_url } = await cloudinary.uploader.upload(path, {
-          public_id: randomUUID(),
-          folder: "test",
-        });
-        formData.append("media", secure_url);
-        fs.unlinkSync(path);
       }
     }
     const data = Object.fromEntries(formData);
     try {
-      const res = await product.create({
-        ...data,
-        media: formData.getAll("media"),
-        colors: JSON.parse(data.colors),
-        sizes: JSON.parse(data.sizes),
-      });
+      const prev = await product.findById(data._id);
+      if (!prev) {
+        await product.create({
+          ...data,
+          media: formData.getAll("media"),
+          colors: JSON.parse(data.colors),
+          sizes: JSON.parse(data.sizes),
+        });
+      } else {
+        await product.findByIdAndUpdate(data._id, {
+          ...data,
+          media: formData.getAll("media"),
+          colors: JSON.parse(data.colors),
+          sizes: JSON.parse(data.sizes),
+        });
+      }
     } catch (error) {
       console.log(error);
     }
@@ -54,7 +68,7 @@ export async function POST(req) {
 
 export async function GET(req) {
   try {
-    const res = await product.find();;
+    const res = await product.find();
     return NextResponse.json({ data: res }, { status: 200 });
   } catch (error) {
     console.log(error);
