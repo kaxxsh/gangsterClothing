@@ -4,10 +4,13 @@ import { BASE_URL } from "@/config";
 import styles from "@/styles/area51.module.scss";
 import { colorNameToCode } from "color-name-to-code";
 import Link from "next/link";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const page = () => {
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [images, setImages] = useState([]);
@@ -20,6 +23,19 @@ const page = () => {
     stock: "",
     status: "active",
   });
+
+  useEffect(() => {
+    if (id) {
+      fetch(BASE_URL + "/api/area51/product/" + id)
+        .then((res) => res.json())
+        .then((data) => {
+          setColors(data.colors);
+          setSizes(data.sizes);
+          setImages(data.media);
+          setForm(data);
+        });
+    }
+  }, [id]);
 
   const handleSubmit = async () => {
     const formData = new FormData();
@@ -43,6 +59,7 @@ const page = () => {
       error: "Error adding product!",
     });
     const data = await response.then((response) => response.json());
+    console.log(data);
   };
 
   // error handling wip
@@ -59,6 +76,7 @@ const page = () => {
           <div className={styles.text}>
             <label htmlFor="title">Title</label>
             <input
+              value={form.title}
               aria-autocomplete="list"
               type="text"
               name="title"
@@ -67,6 +85,7 @@ const page = () => {
             />
             <label htmlFor="description">Description</label>
             <textarea
+              value={form.description}
               spellCheck="false"
               type="text"
               name="description"
@@ -82,8 +101,9 @@ const page = () => {
                   {images.map((item) => {
                     return (
                       <img
+                        onClick={() => setImages(images.filter((img) => img !== item))}
                         className={styles.uploadedimg}
-                        src={URL.createObjectURL(item)}
+                        src={typeof item === "string" ? item : URL.createObjectURL(item)}
                         alt="uploaded image"
                         key={item.name}
                       />
@@ -103,7 +123,6 @@ const page = () => {
               </button>
               <input
                 hidden
-                multiple
                 type="file"
                 name="img"
                 id="img"
@@ -116,6 +135,7 @@ const page = () => {
           <div className={styles.price}>
             <label htmlFor="price">Price</label>
             <input
+              value={form.price}
               aria-autocomplete="list"
               type="number"
               name="price"
@@ -124,6 +144,7 @@ const page = () => {
             />
             <label htmlFor="compare">Compare-at price</label>
             <input
+              value={form.compare}
               aria-autocomplete="list"
               type="number"
               name="compare"
@@ -210,6 +231,7 @@ const page = () => {
             <label htmlFor="category">Category</label>
             <select
               name="category"
+              value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
             >
               <option value="">Select a category</option>
@@ -223,7 +245,11 @@ const page = () => {
           </div>
           <div className={styles.status}>
             <label htmlFor="status">Status</label>
-            <select name="status" onChange={(e) => setForm({ ...form, status: e.target.value })}>
+            <select
+              name="status"
+              value={form.status}
+              onChange={(e) => setForm({ ...form, status: e.target.value })}
+            >
               <option value="true">Active</option>
               <option value="false">Inactive</option>
             </select>

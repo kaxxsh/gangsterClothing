@@ -317,19 +317,23 @@
             text-align: center;
           }
           &:nth-child(2) {
-            width: 41%;
+            width: 40%;
           }
           &:nth-child(3) {
-            width: 11%;
+            width: 10%;
           }
           &:nth-child(4) {
-            width: 21%;
+            width: 20%;
           }
           &:nth-child(5) {
-            width: 11%;
+            width: 10%;
           }
-          &:nth-child(5) {
-            width: 11%;
+
+          &:nth-child(6) {
+            width: 10%;
+          }
+          &:nth-child(7) {
+            width: 5%;
           }
           @mixin chip {
             width: fit-content;
