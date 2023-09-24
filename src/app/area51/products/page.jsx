@@ -3,11 +3,11 @@ import styles from "@/styles/area51.module.scss";
 import Link from "next/link";
 
 const page = async () => {
-  const { data } = await fetch(BASE_URL + "/api/area51/product", {
-    cache: "no-store",
-    credentials: "include",
-    method: "GET",
-  }).then((res) => res.json());
+  // const { data } = await fetch(BASE_URL + "/api/area51/product", {
+  //   cache: "no-store",
+  //   credentials: "include",
+  //   method: "GET",
+  // }).then((res) => res.json());
 
   return (
     <div className={styles.products}>
@@ -36,7 +36,7 @@ const page = async () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => {
+            {/* {data.map((item) => {
               return (
                 <tr key={item._id} style={{ width: "100%" }}>
                   <td>
@@ -83,7 +83,7 @@ const page = async () => {
                   </td>
                 </tr>
               );
-            })}
+            })} */}
           </tbody>
         </table>
       </div>
