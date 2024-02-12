@@ -9,12 +9,16 @@ const Wrapper = ({ children }) => {
   const pathname = usePathname();
   return (
     <>
-      {pathname.includes("area51") || pathname.includes("login") || pathname.includes("signup") ? (
+      {pathname.includes("area51") ||
+      pathname.includes("login") ||
+      pathname.includes("signup") ? (
         children
       ) : (
         <>
           <Top />
-          <Nav />
+          <div style={{ position: "sticky", top: 0, zIndex: "1" }}>
+            <Nav />
+          </div>
           {children}
           <Contact />
         </>

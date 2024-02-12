@@ -6,12 +6,13 @@
 }
 
 .filter {
-  width: 25vw;
+  width: 20vw;
   min-height: 100vh;
+  border-right: 1px solid #d7d7d7;
 }
 
 .products {
-  width: 75vw;
+  width: 80vw;
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
@@ -27,17 +28,18 @@
   align-items: center;
   gap: 0.5rem;
   background-color: transparent;
-  margin: 3rem;
+  border: 2px solid black;
+  padding: 1rem;
 }
 .card:hover {
   transform: scale(1.02);
-
 }
 
 .card > .details {
   width: 15vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -49,6 +51,8 @@
 
 .card > .details > .name {
   font-weight: bolder;
+  font-size: 1.1rem;
+  // width: 90%;
 }
 
 .card > .details > .pricedetails {
