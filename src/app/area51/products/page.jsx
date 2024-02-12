@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { BASE_URL } from "@/config";
 import styles from "@/styles/area51.module.scss";
 import Link from "next/link";
@@ -36,7 +38,7 @@ const page = async () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => {
+            {data?.map((item) => {
               return (
                 <tr key={item._id} style={{ width: "100%" }}>
                   <td>
