@@ -1,11 +1,28 @@
-import { connect, connection } from "mongoose";
+import { connect } from "mongoose";
 
-const dbConnection = (URL) => {
+let cached = { conn: null, promise: null };
+
+const dbConnection = async () => {
   try {
-    connect(URL);
-    connection.on("connected", () => {
-      console.log("MongoDB connection established successfully");
-    });
+    if (cached.conn) {
+      return cached.conn;
+    }
+
+    if (!cached.promise) {
+      const opts = {
+        bufferCommands: false,
+      };
+      cached.promise = connect(process.env.NEXT_PUBLIC_MONGO_URL, opts);
+    }
+
+    try {
+      cached.conn = await cached.promise;
+    } catch (e) {
+      cached.promise = null;
+      throw e;
+    }
+
+    return cached.conn;
   } catch (error) {
     console.log("Error in connecting to DB", error);
   }

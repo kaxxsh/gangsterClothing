@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import dbConnection from "../../utils/db.js";
 import { authUser } from "../../utils/schema.js";
 
-dbConnection(process.env.NEXT_PUBLIC_MONGO_URL);
+dbConnection();
 export async function POST(req) {
   try {
     const { Username, Email, Password } = await req.json();

@@ -10,3 +10,12 @@ export async function GET(req, { params }) {
     console.log(error);
   }
 }
+export async function DELETE(req, { params }) {
+  const id = params.id;
+  try {
+    const res = await product.findByIdAndDelete(id);
+    return NextResponse.json(res, { status: 200 });
+  } catch (error) {
+    console.log(error);
+  }
+}

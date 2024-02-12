@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { product } from "@/app/api/utils/schema.js";
 import dbConnection from "@/app/api/utils/db";
 
-dbConnection(process.env.NEXT_PUBLIC_MONGO_URL);
+dbConnection();
 
 export async function GET(req, { params }) {
   try {

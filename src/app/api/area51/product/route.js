@@ -3,7 +3,7 @@ import { product } from "../../utils/schema";
 import dbConnection from "../../utils/db.js";
 import { v2 as cloudinary } from "cloudinary";
 
-dbConnection(process.env.NEXT_PUBLIC_MONGO_URL);
+dbConnection();
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUD_NAME,
   api_key: process.env.NEXT_PUBLIC_CLOUD_API_KEY,

@@ -4,12 +4,15 @@ import { BASE_URL } from "@/config";
 import styles from "@/styles/area51.module.scss";
 import { colorNameToCode } from "color-name-to-code";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const page = ({ searchParams }) => {
   const id = searchParams?.id;
+  const router = useRouter();
   const [colors, setColors] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [sizes, setSizes] = useState([]);
   const [images, setImages] = useState([]);
   const [form, setForm] = useState({
@@ -24,6 +27,7 @@ const page = ({ searchParams }) => {
 
   useEffect(() => {
     if (id) {
+      setLoading(true);
       fetch(BASE_URL + "/api/area51/product/" + id)
         .then((res) => res.json())
         .then((data) => {
@@ -31,9 +35,14 @@ const page = ({ searchParams }) => {
           setSizes(data.sizes);
           setImages(data.media);
           setForm(data);
-        });
+        })
+        .finally(() => setLoading(false));
     }
   }, [id]);
+
+  if (id && loading) {
+    return <div>Loading...</div>;
+  }
 
   const handleSubmit = async () => {
     const formData = new FormData();
@@ -56,8 +65,20 @@ const page = ({ searchParams }) => {
       success: `${formData.get("title")} has been ${id ? "updated" : "added"}!`,
       error: "Error adding product!",
     });
-    const data = await response.then((response) => response.json());
-    console.log(data);
+  };
+
+  const handleDelete = () => {
+    const response = fetch(BASE_URL + "/api/area51/product/" + id, {
+      cache: "no-store",
+      credentials: "include",
+      method: "DELETE",
+    });
+    toast.promise(response, {
+      loading: "Deleting product...",
+      success: "Product has been deleted!",
+      error: "Error deleting product!",
+    });
+    router.push("/area51/products");
   };
 
   // error handling wip
@@ -277,6 +298,17 @@ const page = ({ searchParams }) => {
               <button onClick={handleSubmit}>{id ? "Update" : "Add"} Product</button>
             </div>
           </div>
+          {id && (
+            <div className={styles.delete}>
+              Delete the product, double click the button to delete.
+              <div className={styles.tooltip}>
+                Please note that once item is deleted, cannot be recovered.
+              </div>
+              <div className={styles["button-container"]}>
+                <button onDoubleClick={handleDelete}>Delete Product</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

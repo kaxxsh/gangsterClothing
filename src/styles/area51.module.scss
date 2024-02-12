@@ -286,6 +286,21 @@
           }
         }
       }
+      .delete {
+        @include section;
+        background-color: #fff2f2;
+        border: 1px solid red;
+        .button-container {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 0.5rem;
+          button {
+            font-size: 1rem;
+            background-color: red;
+            color: white;
+          }
+        }
+      }
     }
     table {
       width: 100%;
