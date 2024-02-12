@@ -1,5 +1,5 @@
 .product {
-  height: 300vh;
+  min-height: 200vh;
 }
 
 .path {
@@ -222,7 +222,7 @@
 
 .product > .productdetails {
   height: 15vh;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #d7d7d7;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -241,20 +241,91 @@
 }
 
 .clothdescription {
-  height: 60vh;
+  min-height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid #d7d7d7;
 }
 
 .policy {
-  height: 130vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  border-bottom: 1px solid #d7d7d7;
 }
 
 .policy > .description {
   width: 80vw;
+}
+
+.otherdes {
+  height: 10vh;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.display {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 15.5vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 1rem;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card > .details {
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card > img {
+  width: 14vw;
+  height: 38vh;
+  mix-blend-mode: color-burn;
+}
+
+.card > .details > .name {
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+
+.card > .details > .pricedetails {
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+}
+.card > .details > .pricedetails > .currentprice {
+  font-size: 0.8rem;
+}
+.card > .details > .pricedetails > .oldprice {
+  color: #6f6f6f;
+  text-decoration: line-through;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: flex-end;
 }

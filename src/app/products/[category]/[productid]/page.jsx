@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "@/styles/products/product.module.css";
 
 const Products = () => {
-  const [select, setselect] = useState(2);
+  const [select, setselect] = useState(1);
   return (
     <section>
       <div className={styles.product}>
@@ -196,6 +196,49 @@ const Products = () => {
             </div>
           </>
         )}
+        <div className={styles.otherdes}>YOU MIGNT ALSO LIKE</div>
+        <div className={styles.display}>
+          <div className={styles.card}>
+            <img src="/demo.jpg" alt="" />
+            <div className={styles.details}>
+              <div className={styles.name}>Gray Polo Shirt</div>
+              <div className={styles.pricedetails}>
+                <div className={styles.currentprice}>RS 49.00</div>
+                <div className={styles.oldprice}>RS 100.00</div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.card}>
+            <img src="/demo.jpg" alt="" />
+            <div className={styles.details}>
+              <div className={styles.name}>Gray Polo Shirt</div>
+              <div className={styles.pricedetails}>
+                <div className={styles.currentprice}>RS 49.00</div>
+                <div className={styles.oldprice}>RS 100.00</div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.card}>
+            <img src="/demo.jpg" alt="" />
+            <div className={styles.details}>
+              <div className={styles.name}>Gray Polo Shirt</div>
+              <div className={styles.pricedetails}>
+                <div className={styles.currentprice}>RS 49.00</div>
+                <div className={styles.oldprice}>RS 100.00</div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.card}>
+            <img src="/demo.jpg" alt="" />
+            <div className={styles.details}>
+              <div className={styles.name}>Gray Polo Shirt</div>
+              <div className={styles.pricedetails}>
+                <div className={styles.currentprice}>RS 49.00</div>
+                <div className={styles.oldprice}>RS 100.00</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
