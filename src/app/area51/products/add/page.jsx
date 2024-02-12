@@ -5,7 +5,7 @@ import styles from "@/styles/area51.module.scss";
 import { colorNameToCode } from "color-name-to-code";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 
 const page = ({ searchParams }) => {
   const id = searchParams?.id;
@@ -52,8 +52,8 @@ const page = ({ searchParams }) => {
       body: formData,
     });
     toast.promise(response, {
-      pending: "Adding product...",
-      success: "Product Added!",
+      loading: id ? "Updating product..." : "Adding product...",
+      success: `${formData.get("title")} has been ${id ? "updated" : "added"}!`,
       error: "Error adding product!",
     });
     const data = await response.then((response) => response.json());
@@ -67,7 +67,7 @@ const page = ({ searchParams }) => {
         <span>
           <Link href="/area51/products">{"<"}-&nbsp;</Link>
         </span>
-        Add Product
+        {id ? "Update" : "Add"} Product
       </div>
       <div className={styles.content}>
         <div className={styles.left}>
@@ -274,7 +274,7 @@ const page = ({ searchParams }) => {
             </div>
             <div className={styles["button-container"]}>
               <button>Preview</button>
-              <button onClick={handleSubmit}>Add Product</button>
+              <button onClick={handleSubmit}>{id ? "Update" : "Add"} Product</button>
             </div>
           </div>
         </div>

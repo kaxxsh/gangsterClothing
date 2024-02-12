@@ -2,7 +2,7 @@
 import style from "@/styles/auth/login.module.css";
 import { BASE_URL } from "@/config";
 import { useState } from "react";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 const Signup = () => {
   const [credentials, setcredentials] = useState({
     Username: "",
@@ -30,7 +30,7 @@ const Signup = () => {
     if (response.status > 399 && response.status < 499) {
       toast.error(data?.message, { autoClose: 3000 });
     } else {
-      toast(data?.message, { autoClose: 1000 });
+      toast.success(data?.message, { autoClose: 1000 });
     }
   };
   return (
@@ -45,9 +45,7 @@ const Signup = () => {
               <input
                 type="text"
                 name="username"
-                onChange={(e) =>
-                  setcredentials({ ...credentials, Username: e.target.value })
-                }
+                onChange={(e) => setcredentials({ ...credentials, Username: e.target.value })}
               />
             </div>
             <div className={style.inputfield}>
@@ -55,9 +53,7 @@ const Signup = () => {
               <input
                 type="text"
                 name="email"
-                onChange={(e) =>
-                  setcredentials({ ...credentials, Email: e.target.value })
-                }
+                onChange={(e) => setcredentials({ ...credentials, Email: e.target.value })}
               />
             </div>
             <div className={style.inputfield}>
@@ -65,9 +61,7 @@ const Signup = () => {
               <input
                 type="password"
                 name="password"
-                onChange={(e) =>
-                  setcredentials({ ...credentials, Password: e.target.value })
-                }
+                onChange={(e) => setcredentials({ ...credentials, Password: e.target.value })}
               />
             </div>
             <div className={style.inputfield}>
@@ -86,8 +80,7 @@ const Signup = () => {
             <button>Continue</button>
           </form>
           <div className={style.terms}>
-            By continuing, you agree to gangster clouthing Conditions of Use and
-            Privacy Notice.
+            By continuing, you agree to gangster clouthing Conditions of Use and Privacy Notice.
           </div>
         </div>
       </div>

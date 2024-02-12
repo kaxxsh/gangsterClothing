@@ -32,8 +32,6 @@ export async function POST(req) {
               .end(buffer);
           });
           formData.append("media", secure_url);
-        } else {
-          formData.append("media", files[i]);
         }
       }
     }

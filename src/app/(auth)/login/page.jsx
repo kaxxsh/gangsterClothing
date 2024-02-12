@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import style from "@/styles/auth/login.module.css";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 import { BASE_URL } from "@/config";
 
 const Login = () => {
@@ -23,9 +23,9 @@ const Login = () => {
     });
     const data = await response.json();
     if (response.status > 399 && response.status < 499) {
-      toast.error(data?.message, { autoClose: 3000 });
+      toast.error(data?.message);
     } else {
-      toast(data?.message, { autoClose: 1000 });
+      toast.success(data?.message);
     }
   };
   return (
@@ -40,9 +40,7 @@ const Login = () => {
               <input
                 type="text"
                 name="email"
-                onChange={(e) =>
-                  setcredentials({ ...credentials, Email: e.target.value })
-                }
+                onChange={(e) => setcredentials({ ...credentials, Email: e.target.value })}
               />
             </div>
             <div className={style.inputfield}>
@@ -50,16 +48,13 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                onChange={(e) =>
-                  setcredentials({ ...credentials, Password: e.target.value })
-                }
+                onChange={(e) => setcredentials({ ...credentials, Password: e.target.value })}
               />
             </div>
             <button type="submit">Continue</button>
           </form>
           <div className={style.terms}>
-            By continuing, you agree to gangster clouthing Conditions of Use and
-            Privacy Notice.
+            By continuing, you agree to gangster clouthing Conditions of Use and Privacy Notice.
           </div>
           <div className={style.create}>
             <div className={style.title}>New to gangster?</div>

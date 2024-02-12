@@ -1,6 +1,5 @@
 "use client";
 import style from "@/styles/nav/nav.module.css";
-import { BiSearchAlt } from "react-icons/bi";
 import { useState } from "react";
 import Image from "next/image";
 
