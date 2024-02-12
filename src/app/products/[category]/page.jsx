@@ -1,28 +1,18 @@
-"use client";
+
 import styles from "@/styles/products/display.module.scss";
-import { useEffect } from "react";
-import { useParams } from "next/navigation";
 import { BASE_URL } from "@/config";
 
 //open browser
 
-const page = () => {
-  const params = useParams();
-
-  useEffect(() => {
-    console.log(params.category);
-    const { data } = fetch(
-      BASE_URL + `/api/area51/product/${params.category}`,
-      {
-        cache: "no-store",
-        credentials: "include",
-        method: "GET",
-      }
-    ).then((res) => console.log(res));
-
-    
-  }, []);
-
+const page = async ({ params }) => {
+  const { data } = await fetch(
+    BASE_URL + `/api/area51/product/${params.category}`,
+    {
+      cache: "no-store",
+      credentials: "include",
+      method: "GET",
+    }
+  ).then((res) => res.json());
   return (
     <section>
       <div className={styles.display}>
@@ -35,90 +25,22 @@ const page = () => {
           </div>
         </div>
         <div className={styles.products}>
-          <a href="">
-            <div className={styles.card}>
-              <img src="/demo.jpg" alt="" />
-              <div className={styles.details}>
-                <div className={styles.name}>Gray Polo Shirt</div>
-                <div className={styles.pricedetails}>
-                  <div className={styles.currentprice}>RS 49.00</div>
-                  <div className={styles.oldprice}>RS 100.00</div>
+          {data?.map((items) => {
+            return (
+              <a href="" key={items._id}>
+                <div className={styles.card}>
+                  <img src={items.media[0]} alt="" />
+                  <div className={styles.details}>
+                    <div className={styles.name}>{items.title}</div>
+                    <div className={styles.pricedetails}>
+                      <div className={styles.currentprice}>{items.price}</div>
+                      <div className={styles.oldprice}>{items.compare}</div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </a>
-          <a href="">
-            <div className={styles.card}>
-              <img src="/demo.jpg" alt="" />
-              <div className={styles.details}>
-                <div className={styles.name}>Gray Polo Shirt</div>
-                <div className={styles.pricedetails}>
-                  <div className={styles.currentprice}>RS 49.00</div>
-                  <div className={styles.oldprice}>RS 100.00</div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="">
-            <div className={styles.card}>
-              <img src="/demo.jpg" alt="" />
-              <div className={styles.details}>
-                <div className={styles.name}>Gray Polo Shirt</div>
-                <div className={styles.pricedetails}>
-                  <div className={styles.currentprice}>RS 49.00</div>
-                  <div className={styles.oldprice}>RS 100.00</div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="">
-            <div className={styles.card}>
-              <img src="/demo.jpg" alt="" />
-              <div className={styles.details}>
-                <div className={styles.name}>Gray Polo Shirt</div>
-                <div className={styles.pricedetails}>
-                  <div className={styles.currentprice}>RS 49.00</div>
-                  <div className={styles.oldprice}>RS 100.00</div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="">
-            <div className={styles.card}>
-              <img src="/demo.jpg" alt="" />
-              <div className={styles.details}>
-                <div className={styles.name}>Gray Polo Shirt</div>
-                <div className={styles.pricedetails}>
-                  <div className={styles.currentprice}>RS 49.00</div>
-                  <div className={styles.oldprice}>RS 100.00</div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="">
-            <div className={styles.card}>
-              <img src="/demo.jpg" alt="" />
-              <div className={styles.details}>
-                <div className={styles.name}>Gray Polo Shirt</div>
-                <div className={styles.pricedetails}>
-                  <div className={styles.currentprice}>RS 49.00</div>
-                  <div className={styles.oldprice}>RS 100.00</div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="">
-            <div className={styles.card}>
-              <img src="/demo.jpg" alt="" />
-              <div className={styles.details}>
-                <div className={styles.name}>Gray Polo Shirt</div>
-                <div className={styles.pricedetails}>
-                  <div className={styles.currentprice}>RS 49.00</div>
-                  <div className={styles.oldprice}>RS 100.00</div>
-                </div>
-              </div>
-            </div>
-          </a>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
