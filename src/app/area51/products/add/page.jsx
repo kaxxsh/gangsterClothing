@@ -4,13 +4,11 @@ import { BASE_URL } from "@/config";
 import styles from "@/styles/area51.module.scss";
 import { colorNameToCode } from "color-name-to-code";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const page = () => {
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+const page = ({ searchParams }) => {
+  const id = searchParams?.id;
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [images, setImages] = useState([]);
