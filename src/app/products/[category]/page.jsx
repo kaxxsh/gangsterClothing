@@ -2,8 +2,6 @@
 import styles from "@/styles/products/display.module.scss";
 import { BASE_URL } from "@/config";
 
-//open browser
-
 const page = async ({ params }) => {
   const { data } = await fetch(
     BASE_URL + `/api/area51/product/${params.category}`,
@@ -13,6 +11,7 @@ const page = async ({ params }) => {
       method: "GET",
     }
   ).then((res) => res.json());
+
   return (
     <section>
       <div className={styles.display}>
@@ -27,7 +26,7 @@ const page = async ({ params }) => {
         <div className={styles.products}>
           {data?.map((items) => {
             return (
-              <a href="" key={items._id}>
+              <a href={`/products/${params.category}/${items._id}`} key={items._id}>
                 <div className={styles.card}>
                   <img src={items.media[0]} alt="" />
                   <div className={styles.details}>
