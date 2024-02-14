@@ -1,9 +1,31 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { BASE_URL } from "@/config";
 import styles from "@/styles/products/product.module.css";
 
-const Products = () => {
+const page = ({ params }) => {
+  const [colors, setColors] = useState([]);
+  const [sizes, setSizes] = useState([]);
+  const [images, setImages] = useState([]);
+  const [form, setForm] = useState({
+    title: "",
+    description: "",
+    price: "",
+    compare: "",
+    category: "",
+  });
   const [select, setselect] = useState(1);
+  useEffect(() => {
+    fetch(BASE_URL + `/api/area51/product/` + params.productid)
+      .then((res) => res.json())
+      .then((data) => {
+        setColors(data.colors);
+        setSizes(data.sizes);
+        setImages(data.media);
+        setForm(data);
+      });
+  }, []);
+
   return (
     <section>
       <div className={styles.product}>
@@ -244,4 +266,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default page;
