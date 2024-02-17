@@ -4,90 +4,101 @@ import { BASE_URL } from "@/config";
 import styles from "@/styles/products/product.module.css";
 
 const page = ({ params }) => {
-  const [colors, setColors] = useState([]);
-  const [sizes, setSizes] = useState([]);
-  const [images, setImages] = useState([]);
-  const [form, setForm] = useState({
-    title: "",
-    description: "",
-    price: "",
-    compare: "",
-    category: "",
-  });
-  const [select, setselect] = useState(1);
+  const [data, setData] = useState({});
+  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
+  const [select, setSelect] = useState(1);
+
   useEffect(() => {
     fetch(BASE_URL + `/api/area51/product/` + params.productid)
       .then((res) => res.json())
-      .then((data) => {
-        setColors(data.colors);
-        setSizes(data.sizes);
-        setImages(data.media);
-        setForm(data);
+      .then((res) => {
+        setData(res.data);
+        setSelectedImage(res.data.media[0]);
+        setSelectedColor(res.data.colors[0]);
+        setSelectedSize(res.data.sizes[0]);
       });
-  }, []);
+  }, [params.productid]);
 
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+  };
+
+  const handleColorClick = (color) => {
+    setSelectedColor(color);
+  };
+
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+  };
   return (
     <section>
       <div className={styles.product}>
-        {/* <div className={styles.path}></div> */}
+        {/* ... (existing code) */}
         <div className={styles.productdisplay}>
           <div className={styles.imageslist}>
             <div className={styles.imgarray}>
-              <img src="/demo.jpg" alt="" />
-              <img src="/demo.jpg" alt="" />
-              <img src="/demo.jpg" alt="" />
-              <img src="/demo.jpg" alt="" />
+              {data?.media?.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt=""
+                  onClick={() => handleImageClick(image)}
+                />
+              ))}
             </div>
             <div className={styles.imgview}>
-              <img src="/demo.jpg" alt="" />
+              <img src={selectedImage} alt="" />
             </div>
           </div>
           <div className={styles.productdetails}>
             <div className={styles.productcard}>
-              <div className={styles.productname}>T-shirt polo shirt</div>
+              <div className={styles.productname}>{data.title}</div>
               <div className={styles.productprice}>
-                <div className={styles.currentprice}>RS. 6000</div>
-                <div className={styles.oldprice}>RS. 7000</div>
+                <div className={styles.currentprice}>RS. {data.price}</div>
+                <div className={styles.oldprice}>RS. {data.compare}</div>
               </div>
               <div className={styles.productcolours}>
                 <div className={styles.colourname}>
-                  Colour : <span className={styles.span}>RED</span>
+                  Colour : <span className={styles.span}>{selectedColor}</span>
                 </div>
                 <div className={styles.colourlist}>
-                  <div className={styles.card}>
-                    <div className={styles.colour}></div>
-                  </div>
-                  <div className={styles.card}>
-                    <div className={styles.colour}></div>
-                  </div>
-                  <div className={styles.card}>
-                    <div className={styles.colour}></div>
-                  </div>
-                  <div className={styles.card}>
-                    <div className={styles.colour}></div>
-                  </div>
+                  {data?.colors?.map((color, index) => (
+                    <div
+                      key={index}
+                      className={styles.card}
+                      onClick={() => handleColorClick(color)}
+                    >
+                      <div
+                        className={`${styles.colour} ${
+                          color === selectedColor ? styles.selected : ""
+                        }`}
+                      ></div>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className={styles.productsizes}>
                 <div className={styles.sizename}>
-                  size : <span className={styles.span}>S</span>
+                  size : <span className={styles.span}>{selectedSize}</span>
                 </div>
                 <div className={styles.sizelist}>
-                  <div className={styles.card}>
-                    <div className={styles.size}>S</div>
-                  </div>
-                  <div className={styles.card}>
-                    <div className={styles.size}>M</div>
-                  </div>
-                  <div className={styles.card}>
-                    <div className={styles.size}>L</div>
-                  </div>
-                  <div className={styles.card}>
-                    <div className={styles.size}>XL</div>
-                  </div>
-                  <div className={styles.card}>
-                    <div className={styles.size}>XXL</div>
-                  </div>
+                  {data?.sizes?.map((size, index) => (
+                    <div
+                      key={index}
+                      className={styles.card}
+                      onClick={() => handleSizeClick(size)}
+                    >
+                      <div
+                        className={`${styles.size} ${
+                          size === selectedSize ? styles.selected : ""
+                        }`}
+                      >
+                        {size}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
               <div className={styles.addcart}>
