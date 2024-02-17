@@ -6,16 +6,16 @@ const jwtGenrator = async ({ payload }) => {
   const alg = "HS256";
   return await new SignJWT({ user })
     .setProtectedHeader({ alg })
-    .setExpirationTime(process.env.NEXT_PUBLIC_JWT_EXPIRE)
+    .setExpirationTime(process.env.JWT_EXPIRE)
     .setIssuedAt()
-    .sign(new TextEncoder().encode(process.env.NEXT_PUBLIC_JWT_SECRET));
+    .sign(new TextEncoder().encode(process.env.JWT_SECRET));
 };
 
 const jwtVerifier = async (token) => {
   try {
     return await jwtVerify(
       token,
-      new TextEncoder().encode(process.env.NEXT_PUBLIC_JWT_SECRET)
+      new TextEncoder().encode(process.env.JWT_SECRET)
     );
   } catch (error) {
     console.log(error);

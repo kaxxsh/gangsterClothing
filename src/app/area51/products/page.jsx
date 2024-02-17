@@ -1,5 +1,4 @@
 export const dynamic = "force-dynamic";
-
 import { BASE_URL } from "@/config";
 import styles from "@/styles/area51.module.scss";
 import Link from "next/link";

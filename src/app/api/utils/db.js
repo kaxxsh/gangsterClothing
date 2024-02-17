@@ -2,7 +2,7 @@ import { connect, connection } from "mongoose";
 
 const dbConnection = () => {
   try {
-    connect(process.env.NEXT_PUBLIC_MONGO_URL);
+    connect(process.env.MONGO_URL);
     connection.on("connected", () => {
       console.log("MongoDB connection established successfully");
     });
