@@ -30,7 +30,7 @@ const page = ({ searchParams }) => {
       setLoading(true);
       fetch(BASE_URL + "/api/area51/product/" + id)
         .then((res) => res.json())
-        .then((data) => {
+        .then(({ data }) => {
           setColors(data.colors);
           setSizes(data.sizes);
           setImages(data.media);
@@ -115,7 +115,7 @@ const page = ({ searchParams }) => {
           <div className={styles.media}>
             <label htmlFor="media">Media</label>
             <div className={styles.upload}>
-              {images.length > 0 && (
+              {images?.length > 0 && (
                 <div className={styles["uploaded-container"]}>
                   {images.map((item) => {
                     return (
