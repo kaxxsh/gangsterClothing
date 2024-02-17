@@ -2,13 +2,15 @@
 import { useEffect, useState } from "react";
 import { BASE_URL } from "@/config";
 import styles from "@/styles/products/product.module.css";
+import { set } from "mongoose";
 
 const page = ({ params }) => {
   const [data, setData] = useState({});
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
-  const [select, setSelect] = useState(1);
+  const [select, setselect] = useState(1);
+  const [count, setcount] = useState(1);
 
   useEffect(() => {
     fetch(BASE_URL + `/api/area51/product/` + params.productid)
@@ -32,6 +34,12 @@ const page = ({ params }) => {
   const handleSizeClick = (size) => {
     setSelectedSize(size);
   };
+  const handleAddToCart = () => {
+    if(_id && selectedColor&& selectedSize && count){
+      
+    }
+  };
+
   return (
     <section>
       <div className={styles.product}>
@@ -67,8 +75,9 @@ const page = ({ params }) => {
                   {data?.colors?.map((color, index) => (
                     <div
                       key={index}
-                      className={styles.card}
+                      className={`${styles.card} ${styles.colourCard}`}
                       onClick={() => handleColorClick(color)}
+                      style={{ backgroundColor: color }}
                     >
                       <div
                         className={`${styles.colour} ${
@@ -103,11 +112,23 @@ const page = ({ params }) => {
               </div>
               <div className={styles.addcart}>
                 <div className={styles.quantity}>
-                  <div className={styles.add}>+</div>
-                  <div className={styles.count}>2</div>
-                  <div className={styles.sub}>-</div>
+                  <div
+                    className={styles.sub}
+                    onClick={() => setcount(count > 1 ? count - 1 : 1)}
+                  >
+                    -
+                  </div>
+                  <div className={styles.count}>{count}</div>
+                  <div
+                    className={styles.add}
+                    onClick={() => setcount(count + 1)}
+                  >
+                    +
+                  </div>
                 </div>
-                <div className={styles.cart}>ADD TO CART</div>
+                <div className={styles.cart} onClick={handleAddToCart}>
+                  ADD TO CART
+                </div>
               </div>
               <div className={styles.buy}>
                 <div className={styles.buybtn}>BUY</div>
