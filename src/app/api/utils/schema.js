@@ -93,6 +93,29 @@ const Product = new mongoose.Schema(
 //   created_at: 1708194335
 // }
 
+const Cart = new mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+  },
+  productid: {
+    type: String,
+    required: true,
+  },
+  color: {
+    type: String,
+    required: true,
+  },
+  size: {
+    type: String,
+    required: true,
+  },
+  count: {
+    type: Number,
+    required: true,
+  },
+});
+
 const Order = new mongoose.Schema(
   {
     id: {
@@ -148,5 +171,6 @@ User.pre("save", async function () {
 
 const authUser = mongoose.models.authUser || mongoose.model("authUser", User);
 const product = mongoose.models.product || mongoose.model("product", Product);
+const cart = mongoose.models.cart || mongoose.model("cart", Cart);
 
-export { authUser, product };
+export { authUser, product, cart };

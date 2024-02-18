@@ -1,6 +1,7 @@
 "use client";
-"use client";
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
+import { BASE_URL } from "@/config";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
@@ -23,6 +24,16 @@ const Cart = () => {
       price: 30,
     },
   ]);
+
+  useEffect(() => {
+    const { data } = fetch(BASE_URL + "/api/cart", {
+      cache: "no-store",
+      credentials: "include",
+      method: "GET",
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }, []);
 
   const handleIncrement = (index) => {
     const updatedCartItems = [...cartItems];

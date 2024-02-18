@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { BASE_URL } from "@/config";
 import styles from "@/styles/products/product.module.css";
-import { set } from "mongoose";
 
 const page = ({ params }) => {
   const [data, setData] = useState({});
@@ -11,6 +10,7 @@ const page = ({ params }) => {
   const [selectedSize, setSelectedSize] = useState("");
   const [select, setselect] = useState(1);
   const [count, setcount] = useState(1);
+  const _id = "sfgsf";
 
   useEffect(() => {
     fetch(BASE_URL + `/api/area51/product/` + params.productid)
@@ -35,8 +35,20 @@ const page = ({ params }) => {
     setSelectedSize(size);
   };
   const handleAddToCart = () => {
-    if(_id && selectedColor&& selectedSize && count){
-      
+    if (_id && selectedColor && selectedSize && count) {
+      const response = fetch(BASE_URL + "/api/cart", {
+        cache: "no-store",
+        credentials: "include",
+        method: "POST",
+        body: JSON.stringify({
+          id: _id,
+          productid: params.productid,
+          color: selectedColor,
+          size: selectedSize,
+          count: count,
+        }),
+      });
+      console.log(response);
     }
   };
 
