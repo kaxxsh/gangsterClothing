@@ -42,10 +42,12 @@ const page = ({ params }) => {
         method: "POST",
         body: JSON.stringify({
           id: _id,
+          image: selectedImage,
           productid: params.productid,
           color: selectedColor,
           size: selectedSize,
           count: count,
+          price: data.price,
         }),
       });
       console.log(response);

@@ -4,26 +4,7 @@ import React, { useState, useEffect } from "react";
 import { BASE_URL } from "@/config";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Product 1",
-      image: "product1.jpg",
-      count: 1,
-      size: "M",
-      color: "Red",
-      price: 20,
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      image: "product2.jpg",
-      count: 2,
-      size: "L",
-      color: "Blue",
-      price: 30,
-    },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     const { data } = fetch(BASE_URL + "/api/cart", {
@@ -32,7 +13,7 @@ const Cart = () => {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => setCartItems(res));
   }, []);
 
   const handleIncrement = (index) => {

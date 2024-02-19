@@ -98,6 +98,10 @@ const Cart = new mongoose.Schema({
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+    required: true,
+  },
   productid: {
     type: String,
     required: true,
@@ -111,6 +115,10 @@ const Cart = new mongoose.Schema({
     required: true,
   },
   count: {
+    type: Number,
+    required: true,
+  },
+  price: {
     type: Number,
     required: true,
   },
